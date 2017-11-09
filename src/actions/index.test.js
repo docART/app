@@ -2,12 +2,12 @@ import * as actions from '.';
 
 describe('actions', () => {
     it('should create action of type CREATE_PROTOTYPE_REQUESTED', () => {
-        const title = 'docART';
+        const values = [];
         const expectedAction = {
             type: 'CREATE_PROTOTYPE_REQUESTED',
-            title
+            values
         };
-        expect(actions.createPrototypeRequested(title)).toEqual(expectedAction)
+        expect(actions.createPrototypeRequested(values)).toEqual(expectedAction)
     });
 
     it('should create action of type CREATE_PROTOTYPE_SUCCEDEDED', () => {

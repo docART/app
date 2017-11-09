@@ -1,4 +1,4 @@
-import { all, call, put, select, takeEvery, takeLatest } from 'redux-saga/effects';
+import { all, call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import GitHub from 'github-api';
 
 const gh = new GitHub({token: '074500ea09c0ef03ae429aa6d203bc8d8963e5d9'});
@@ -15,24 +15,20 @@ export function* listPrototypes() {
 
 export function* createPrototype(action) {
     try {
-        const payload = yield call([org, org.createRepo], {name: action.title});
-        yield put({type: 'CREATE_PROTOTYPE_SUCCEEDED', payload});
+        const payload = {
+            name: action.values.nick,
+            description: action.values.title
+        };
+        const response = yield call([org, org.createRepo], payload);
+        yield put({type: 'CREATE_PROTOTYPE_SUCCEEDED', response});
     } catch (e) {
         yield put({type: 'CREATE_PROTOTYPE_FAILED', message: e.message});
     }
 }
 
-export function* logger(action) {
-    const state = yield select();
-
-    console.log('action', action);
-    console.log('state after', state);
-}
-
 export default function* rootSaga() {
-    console.log('hello');
     yield all([
-        takeEvery('*', logger),
+        takeLatest('CREATE_PROTOTYPE_REQUESTED', createPrototype),
         takeEvery('LIST_PROTOTYPES_REQUESTED', listPrototypes)
     ]);
 }

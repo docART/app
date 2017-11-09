@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { createPrototypeRequested } from '../actions';
 
 let SharePrototypeForm = (props) => {
   const { handleSubmit } = props;
@@ -25,5 +26,8 @@ let SharePrototypeForm = (props) => {
 };
 
 export default reduxForm({
-  form: 'share prototype'
+    form: 'share prototype',
+    onSubmit: (values, dispatch) => {
+        dispatch(createPrototypeRequested(values));
+    }
 })(SharePrototypeForm);

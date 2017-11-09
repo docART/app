@@ -1,6 +1,6 @@
-export const createPrototypeRequested = (title) => ({
+export const createPrototypeRequested = (values) => ({
     type: 'CREATE_PROTOTYPE_REQUESTED',
-    title
+    values
 });
 
 export const createPrototypeSucceeded = (payload) => ({
