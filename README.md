@@ -10,6 +10,6 @@ PRODUCTION ENVIRONMENT:
 
 DEVELOPMENT ENVIRONMENT:
 
-- Run `docker build . -f Dockerfile-env -t docart/app:dev' in the mail folder
+- Run `docker build . -f Dockerfile-dev -t docart/app:dev' in the mail folder
 
 - Execute `docker run -d -p 3000:3000 docart/app:dev`
