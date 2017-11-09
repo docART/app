@@ -1,11 +1,11 @@
 import React from 'react';
-import PrototypeList from './PrototypeList';
+import SharePrototypeForm from './SharePrototypeForm';
 
 const App = () => {
     return (
         <div>
-            <h2>Prototipos</h2>
-            <PrototypeList />
+            <h2>Compartir Prototipo</h2>
+            <SharePrototypeForm />
         </div>
     );
 };
