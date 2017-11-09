@@ -1,6 +1,6 @@
 ## Deployment instructions
 
-- Install docker: [instructions](https://docs.docker.com/engine/installation/)N
+- Install docker: [instructions](https://docs.docker.com/engine/installation/)
 
 PRODUCTION ENVIRONMENT:
 
