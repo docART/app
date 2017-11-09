@@ -6,7 +6,8 @@ FROM node:8.9
 ENV NPM_CONFIG_LOGLEVEL warn
 
 # Copy all local files into the image.
-COPY . .
+WORKDIR /usr/src/app
+COPY . /usr/src/app/
 
 # Install dependencies
 RUN npm install
