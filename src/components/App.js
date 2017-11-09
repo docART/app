@@ -5,7 +5,9 @@ const App = () => {
     return (
         <div>
             <h2>Compartir Prototipo</h2>
-            <SharePrototypeForm />
+            <div className="form-wrapper w-form">
+                <SharePrototypeForm />
+            </div>
         </div>
     );
 };
