@@ -24,7 +24,8 @@ describe('sagas', () => {
         const generator = createPrototype(action);
         const payload = {
             name: action.values.nick,
-            description: action.values.title
+            description: action.values.title,
+            auto_init: true
         };
         const prototype = {};
 

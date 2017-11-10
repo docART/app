@@ -17,7 +17,8 @@ export function* createPrototype(action) {
     try {
         const payload = {
             name: action.values.nick,
-            description: action.values.title
+            description: action.values.title,
+            auto_init: true
         };
         const response = yield call([org, org.createRepo], payload);
         yield put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype: response.data});
