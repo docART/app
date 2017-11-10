@@ -20,8 +20,19 @@ export function* createPrototype(action) {
             description: action.values.title,
             auto_init: true
         };
-        const response = yield call([org, org.createRepo], payload);
-        yield put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype: response.data});
+        const prototype = yield call([org, org.createRepo], payload);
+        const repo = gh.getRepo('docART', prototype.data.name);
+        const readme = yield call([repo, repo.getReadme], 'master', true);
+        const content = readme.data +
+                '\n## Resumen\n\n' + action.values.summary +
+                '\n## Motivaciones\n\n' + action.values.motivations +
+                '\n## Equipo\n\n' + action.values.team +
+                '\n## Promotor\n\n' + action.values.promoter +
+                '\n## Correo electrónico\n\n' + action.values.email +
+                '\n## Licencia\n\n' + action.values.license;
+        const message = 'Update README.md';
+        const response = yield call([repo, repo.writeFile], 'master', 'README.md', content, message, {});
+        yield put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype: prototype.data});
     } catch (e) {
         yield put({type: 'CREATE_PROTOTYPE_FAILED', message: e.message});
     }
