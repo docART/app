@@ -5,6 +5,7 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { listPrototypesRequested } from './actions';
 import MainView from './components/pages/MainView';
+import SecondView from './components/pages/SecondView';
 import SharePrototypeSecondForm from './components/modules/SharePrototypeSecondForm';
 import reducer from './reducers';
 import sagas from './sagas';
@@ -23,8 +24,8 @@ render(
     <Provider store={store}>
         <Router>
             <div>
-                <Route exact path="/" component={MainView}/>
-                <Route path="/s" component={SharePrototypeSecondForm} />
+                <Route path="/prototype/1" component={MainView}/>
+                <Route path="/prototype/2" component={SecondView} />
             </div>
         </Router>
     </Provider>,

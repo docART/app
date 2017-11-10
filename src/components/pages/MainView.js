@@ -1,6 +1,5 @@
 import React from 'react';
 import SharePrototypeForm from '../modules/SharePrototypeForm';
-import SharePrototypeSecondForm from '../modules/SharePrototypeForm';
 
 const MainView = () => {
     return (
