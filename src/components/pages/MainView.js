@@ -1,7 +1,8 @@
 import React from 'react';
-import SharePrototypeForm from './SharePrototypeForm';
+import SharePrototypeForm from '../modules/SharePrototypeForm';
+import SharePrototypeSecondForm from '../modules/SharePrototypeForm';
 
-const App = () => {
+const MainView = () => {
     return (
         <div>
             <h2>Compartir Prototipo</h2>
@@ -12,4 +13,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default MainView;

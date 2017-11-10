@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { createPrototypeRequested } from '../actions';
+import { createPrototypeRequested } from '../../actions';
 
 let SharePrototypeForm = (props) => {
   const { handleSubmit } = props;
