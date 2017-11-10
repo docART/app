@@ -1,6 +1,8 @@
 const initialState = {
     isFetching: false,
-    items: []
+    isPosting: false,
+    items: [],
+    selected: {}
 };
 
 export default function prototypes(state = initialState, action) {
@@ -17,6 +19,19 @@ export default function prototypes(state = initialState, action) {
         case 'LIST_PROTOTYPES_FAILED':
             return Object.assign({}, state, {
                 isFetching: false
+            });
+        case 'CREATE_PROTOTYPE_REQUESTED':
+            return Object.assign({}, state, {
+                isPosting: true
+            });
+        case 'CREATE_PROTOTYPE_SUCCEEDED':
+            return Object.assign({}, state, {
+                isPosting: false,
+                selected: action.prototype
+            });
+        case 'CREATE_PROTOTYPE_FAILED':
+            return Object.assign({}, state, {
+                isPosting: false
             });
         default:
             return state;

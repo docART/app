@@ -3,9 +3,9 @@ export const createPrototypeRequested = (values) => ({
     values
 });
 
-export const createPrototypeSucceeded = (payload) => ({
+export const createPrototypeSucceeded = (prototype) => ({
     type: 'CREATE_PROTOTYPE_SUCCEEDED',
-    payload
+    prototype
 });
 
 export const createPrototypeFailed = (message) => ({

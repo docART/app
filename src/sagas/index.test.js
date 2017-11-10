@@ -3,7 +3,7 @@ import GitHub from 'github-api';
 import { listPrototypes, createPrototype } from '.';
 
 describe('sagas', () => {
-    const gh = new GitHub({token: '074500ea09c0ef03ae429aa6d203bc8d8963e5d9'});
+    const gh = new GitHub({token: '99b65aacd4c3d5e41e1419b056a87bd9811483f2'});
     const org = gh.getOrganization('docART');
 
     it('should list prototypes', () => {
@@ -26,8 +26,9 @@ describe('sagas', () => {
             name: action.values.nick,
             description: action.values.title
         };
+        const prototype = {};
 
         expect(generator.next().value).toEqual(call([org, org.createRepo], payload));
-        expect(generator.next().value).toEqual(put({type: 'CREATE_PROTOTYPE_SUCCEEDED'}));
+        expect(generator.next({data: prototype}).value).toEqual(put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype}));
     });
 });

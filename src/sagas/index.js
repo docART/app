@@ -1,7 +1,7 @@
 import { all, call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import GitHub from 'github-api';
 
-const gh = new GitHub({token: '074500ea09c0ef03ae429aa6d203bc8d8963e5d9'});
+const gh = new GitHub({token: '99b65aacd4c3d5e41e1419b056a87bd9811483f2'});
 const org = gh.getOrganization('docART');
 
 export function* listPrototypes() {
@@ -20,7 +20,7 @@ export function* createPrototype(action) {
             description: action.values.title
         };
         const response = yield call([org, org.createRepo], payload);
-        yield put({type: 'CREATE_PROTOTYPE_SUCCEEDED', response});
+        yield put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype: response.data});
     } catch (e) {
         yield put({type: 'CREATE_PROTOTYPE_FAILED', message: e.message});
     }

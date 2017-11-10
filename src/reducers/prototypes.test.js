@@ -4,7 +4,9 @@ describe('prototypes reducer', () => {
     it('should return initial state', () => {
         const expectedState = {
             isFetching: false,
-            items: []
+            isPosting: false,
+            items: [],
+            selected: {}
         };
         expect(prototypes(undefined, {})).toEqual(expectedState);
     });
@@ -15,7 +17,9 @@ describe('prototypes reducer', () => {
         };
         const expectedState = {
             isFetching: true,
-            items: []
+            isPosting: false,
+            items: [],
+            selected: {}
         };
         expect(prototypes(undefined, action)).toEqual(expectedState);
     });
@@ -27,7 +31,9 @@ describe('prototypes reducer', () => {
         };
         const expectedState = {
             isFetching: false,
-            items: [{}]
+            isPosting: false,
+            items: [{}],
+            selected: {}
         };
         expect(prototypes(undefined, action)).toEqual(expectedState);
     });
@@ -38,11 +44,15 @@ describe('prototypes reducer', () => {
         };
         const initialState = {
             isFetching: true,
-            items: []
+            isPosting: false,
+            items: [],
+            selected: {}
         };
         const expectedState = {
             isFetching: false,
-            items: []
+            isPosting: false,
+            items: [],
+            selected: {}
         };
         expect(prototypes(initialState, action)).toEqual(expectedState);
     });
