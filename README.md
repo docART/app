@@ -10,7 +10,7 @@ PRODUCTION ENVIRONMENT:
 
 DEVELOPMENT ENVIRONMENT:
 
-- Run `docker build . -e REACT_APP_GITHUB_TOKEN=[personal access token] -f Dockerfile-dev -t docart/app:dev` in the main folder
+- Run `docker build . -f Dockerfile-dev -t docart/app:dev` in the main folder
 
 - [Create a personal access token for GitHub](https://github.com/settings/tokens/new) with repo scope
 
