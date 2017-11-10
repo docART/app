@@ -3,7 +3,7 @@ import GitHub from 'github-api';
 import { listPrototypes, createPrototype } from '.';
 
 describe('sagas', () => {
-    const gh = new GitHub({token: '99b65aacd4c3d5e41e1419b056a87bd9811483f2'});
+    const gh = new GitHub({token: process.env.REACT_APP_GITHUB_TOKEN});
     const org = gh.getOrganization('docART');
 
     it('should list prototypes', () => {
