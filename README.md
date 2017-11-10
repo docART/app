@@ -10,7 +10,8 @@ PRODUCTION ENVIRONMENT:
 
 DEVELOPMENT ENVIRONMENT:
 
-- Create a personal access token for [GitHub](https://github.com/settings/tokens/new) with repo scope
 - Run `docker build . -e REACT_APP_GITHUB_TOKEN=[personal access token] -f Dockerfile-dev -t docart/app:dev` in the main folder
 
-- Execute `docker run -d -p 3000:3000 -v [/your/current/path]/src:/usr/src/app/src -v [/your/current/path]/public:/usr/src/app/public docart/app:dev`
+- [Create a personal access token for GitHub](https://github.com/settings/tokens/new) with repo scope
+
+- Execute `docker run -d -p 3000:3000 -e REACT_APP_GITHUB_TOKEN=[personal access token] -v [/your/current/path]/src:/usr/src/app/src -v [/your/current/path]/public:/usr/src/app/public docart/app:dev`
