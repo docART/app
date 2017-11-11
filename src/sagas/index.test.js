@@ -1,4 +1,4 @@
-import { call, put } from 'redux-saga/effects';
+import { all, call, put } from 'redux-saga/effects';
 import GitHub from 'github-api';
 import { listPrototypes, createPrototype } from '.';
 
@@ -39,8 +39,12 @@ describe('sagas', () => {
         const message = 'Update README.md';
 
         expect(generator.next().value).toEqual(call([org, org.createRepo], payload));
-        expect(generator.next({data: prototype}).value).toEqual(call([repo, repo.getReadme], 'master', true));
-        expect(generator.next({data: '#lorem\nLorem ipsum dolor sit'}).value).toEqual(call([repo, repo.writeFile], 'master', 'README.md', content, message, {}));
+        expect(generator.next({data: prototype}).value).toEqual(all([
+            call([repo, repo.createBranch], 'master', 'recipe'),
+            call([repo, repo.createBranch], 'master', 'insights'),
+        ]));
+        expect(generator.next().value).toEqual(call([repo, repo.getReadme], 'recipe', true));
+        expect(generator.next({data: '#lorem\nLorem ipsum dolor sit'}).value).toEqual(call([repo, repo.writeFile], 'recipe', 'README.md', content, message, {}));
         expect(generator.next().value).toEqual(put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype}));
     });
 });
