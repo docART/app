@@ -1,4 +1,8 @@
-## Deployment instructions
+# docART
+
+docART is a Github client developed during ICDemocracia17 @ Medialab Prado.
+
+## Installation instructions
 
 - Install docker: [instructions](https://docs.docker.com/engine/installation/)
 
