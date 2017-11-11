@@ -33,9 +33,14 @@ export function* createPrototype(action) {
                 '\n## Equipo\n\n' + action.values.team +
                 '\n## Promotor\n\n' + action.values.promoter +
                 '\n## Correo electrónico\n\n' + action.values.email +
-                '\n## Licencia\n\n' + action.values.license;
+                '\n## Licencia\n\n' + action.values.license +
+                '\n## Procedimientos\n\n' + action.values.procedure +
+                '\n## Cronograma\n\n' + action.values.schedule +
+                '\n## Necesidades\n\n' + action.values.requirements +
+                '\n## Referencias\n\n' + action.values.references +
+                '\n## Video\n\n' + action.values.video;
         const message = 'Update README.md';
-        const response = yield call([repo, repo.writeFile], 'recipe', 'README.md', content, message, {});
+        yield call([repo, repo.writeFile], 'recipe', 'README.md', content, message, {});
         yield put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype: prototype.data});
     } catch (e) {
         yield put({type: 'CREATE_PROTOTYPE_FAILED', message: e.message});
