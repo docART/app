@@ -20,7 +20,7 @@ let SharePrototypeForm = (props) => {
             <option>Creative Commons Attribution 4.0</option>
             <option>Creative Commons Attribution Share Alike 4.0</option>
         </Field>
-        <button className="button" type="submit">Dale</button>
+        <button className="button" type="submit">Enviar</button>
     </form>
   );
 };
