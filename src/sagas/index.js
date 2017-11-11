@@ -40,8 +40,8 @@ export function* createPrototype(action) {
                 '\n## Referencias\n\n' + action.values.references +
                 '\n## Logo\n\n![' + action.values.nick + '](' + action.values.logo + ')' +
                 '\n## Video\n\n' + action.values.video;
-        const message = 'Update README.md';
-        yield call([repo, repo.writeFile], 'recipe', 'README.md', content, message, {});
+        yield call([repo, repo.writeFile], 'recipe', 'README.md', content, 'Update README.md', {});
+        yield call([repo, repo.writeFile], 'recipe', 'meta.json', JSON.stringify(action.values), 'Save values', {});
         yield put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype: prototype.data});
     } catch (e) {
         yield put({type: 'CREATE_PROTOTYPE_FAILED', message: e.message});
