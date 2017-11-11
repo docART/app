@@ -5,6 +5,7 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { listPrototypesRequested } from './actions';
 import PrototypeWizard from './components/pages/PrototypeWizard';
+import PrototypeList from './components/modules/PrototypeList';
 import reducer from './reducers';
 import sagas from './sagas';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
@@ -22,7 +23,8 @@ render(
     <Provider store={store}>
         <Router>
             <div>
-                <Route path="/prototype/form" component={PrototypeWizard}/>
+                <Route exact path="/" component={PrototypeList}/>
+                <Route exact path="/prototype/form" component={PrototypeWizard}/>
             </div>
         </Router>
     </Provider>,

@@ -10,7 +10,8 @@ let PrototypeWizardPage2 = (props) => {
         <Field name="schedule" component="textarea" placeholder="Cronograma"  required className="darker field w-input" />
         <Field name="requirements" component="textarea" placeholder="Necesidades"  required className="darker field w-input" />
         <Field name="references" component="textarea" placeholder="Referencias"  required className="darker field w-input" />
-        <Field name="video" component="input" type="url" placeholder="Video" maxLength="256" required className="darker field w-input" />
+        <Field name="logo" component="input" type="url" placeholder="Logo" className="darker field w-input" />
+        <Field name="video" component="input" type="url" placeholder="Video" maxLength="256" className="darker field w-input" />
     
         <button className="button" type="submit">Dale</button>
     </form>

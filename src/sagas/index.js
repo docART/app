@@ -38,6 +38,7 @@ export function* createPrototype(action) {
                 '\n## Cronograma\n\n' + action.values.schedule +
                 '\n## Necesidades\n\n' + action.values.requirements +
                 '\n## Referencias\n\n' + action.values.references +
+                '\n## Logo\n\n![' + action.values.nick + '](' + action.values.logo + ')' +
                 '\n## Video\n\n' + action.values.video;
         const message = 'Update README.md';
         yield call([repo, repo.writeFile], 'recipe', 'README.md', content, message, {});
