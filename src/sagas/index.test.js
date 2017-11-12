@@ -60,6 +60,7 @@ describe('sagas', () => {
             call([repo, repo.createBranch], 'master', 'recipe'),
             call([repo, repo.createBranch], 'master', 'insights'),
         ]));
+        expect(generator.next().value).toEqual(call([repo, repo.deleteRef], 'heads/master'));
         expect(generator.next().value).toEqual(call([repo, repo.getReadme], 'recipe', true));
         expect(generator.next({data: '#lorem\nLorem ipsum dolor sit'}).value).toEqual(call([repo, repo.writeFile], 'recipe', 'README.md', content, 'Update README.md', {}));
         expect(generator.next().value).toEqual(call([repo, repo.writeFile], 'recipe', 'meta.json', JSON.stringify(action.values), 'Save values', {}));

@@ -26,6 +26,7 @@ export function* createPrototype(action) {
             call([repo, repo.createBranch], 'master', 'recipe'),
             call([repo, repo.createBranch], 'master', 'insights')
         ]);
+        yield call([repo, repo.deleteRef], 'heads/master');
         const readme = yield call([repo, repo.getReadme], 'recipe', true);
         const content = readme.data +
                 '\n## Resumen\n\n' + action.values.summary +
