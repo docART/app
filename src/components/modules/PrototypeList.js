@@ -4,11 +4,15 @@ import PropTypes from 'prop-types';
 import Prototype from './Prototype';
 
 const PrototypeList = ({prototypes}) => (
-    <ul>
-        {prototypes.map((prototype, index) => (
-            <Prototype key={index} {...prototype} />
-        ))}
-    </ul>
+    <div className="section">
+        <div className="w-container">
+            <ul>
+                {prototypes.map((prototype, index) => (
+                    <Prototype key={index} {...prototype} />
+                ))}
+            </ul>
+        </div>
+    </div>
 );
 
 PrototypeList.propTypes = {
