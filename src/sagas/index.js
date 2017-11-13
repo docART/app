@@ -16,7 +16,7 @@ export function* listPrototypes() {
         }));
         const prototypes = {};
         items.forEach((currentValue, index) => {
-            prototypes[currentValue.full_name] = responses[index].data;
+            prototypes[currentValue.name] = responses[index].data;
         });
         yield put({type: 'LIST_PROTOTYPES_SUCCEEDED', items: prototypes});
     } catch (e) {
