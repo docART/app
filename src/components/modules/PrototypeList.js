@@ -6,11 +6,13 @@ import Prototype from './Prototype';
 const PrototypeList = ({prototypes}) => (
     <div className="section">
         <div className="w-container">
-            <ul>
+            <h2>Prototipos</h2>
+            <div className="divider grey"></div>
+            <div className="w-row">
                 {prototypes.map((prototype, index) => (
                     <Prototype key={index} {...prototype} />
                 ))}
-            </ul>
+            </div>
         </div>
     </div>
 );
