@@ -68,6 +68,8 @@ describe('sagas', () => {
         expect(generator.next().value).toEqual(call([repo, repo.getReadme], 'recipe', true));
         expect(generator.next({data: '#lorem\nLorem ipsum dolor sit'}).value).toEqual(call([repo, repo.writeFile], 'recipe', 'README.md', content, 'Update README.md', {}));
         expect(generator.next().value).toEqual(call([repo, repo.writeFile], 'recipe', 'meta.json', JSON.stringify(action.values), 'Save values', {}));
+        expect(generator.next().value).toEqual(call([repo, repo.writeFile], 'recipe', 'before.md', '', 'Create document before.md', {}));
+        expect(generator.next().value).toEqual(call([repo, repo.writeFile], 'recipe', 'future.md', '', 'Create document future.md', {}));
         expect(generator.next().value).toEqual(put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype: prototype.full_name}));
     });
 });
