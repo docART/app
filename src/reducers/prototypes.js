@@ -14,9 +14,7 @@ export default function prototypes(state = initialState, action) {
         case 'LIST_PROTOTYPES_SUCCEEDED':
             return Object.assign({}, state, {
                 isFetching: false,
-                items: action.items.filter((element) => {
-                    return (element.name !== 'app');
-                })
+                items: action.items
             });
         case 'LIST_PROTOTYPES_FAILED':
             return Object.assign({}, state, {

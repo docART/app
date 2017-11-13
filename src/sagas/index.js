@@ -7,7 +7,14 @@ const org = gh.getOrganization('docART');
 export function* listPrototypes() {
     try {
         const response = yield call([org, org.getRepos]);
-        yield put({type: 'LIST_PROTOTYPES_SUCCEEDED', items: response.data});
+        const items = response.data.filter((currentValue) => {
+            return ['app', 'docs'].indexOf(currentValue.name) < 0;
+        });
+        const responses = yield all(items.map((currentValue) => {
+            let repo = gh.getRepo(currentValue.full_name);
+            return call([repo, repo.getContents], 'recipe', 'meta.json', 'true');
+        }));
+        yield put({type: 'LIST_PROTOTYPES_SUCCEEDED', items: responses.map((currentValue) => { return currentValue.data; })});
     } catch (e) {
         yield put({type: 'LIST_PROTOTYPES_FAILED', message: e.message});
     }
