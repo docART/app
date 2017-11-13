@@ -5,8 +5,8 @@ describe('prototypes reducer', () => {
         const expectedState = {
             isFetching: false,
             isPosting: false,
-            items: [],
-            selected: {}
+            items: {},
+            selected: ''
         };
         expect(prototypes(undefined, {})).toEqual(expectedState);
     });
@@ -18,8 +18,8 @@ describe('prototypes reducer', () => {
         const expectedState = {
             isFetching: true,
             isPosting: false,
-            items: [],
-            selected: {}
+            items: {},
+            selected: ''
         };
         expect(prototypes(undefined, action)).toEqual(expectedState);
     });
@@ -27,13 +27,13 @@ describe('prototypes reducer', () => {
     it('should handle LIST_PROTOTYPES_SUCCEEDED', () => {
         const action = {
             'type': 'LIST_PROTOTYPES_SUCCEEDED',
-            'items': [{}]
+            'items': {'test/example': {}}
         };
         const expectedState = {
             isFetching: false,
             isPosting: false,
-            items: [{}],
-            selected: {}
+            items: {'test/example': {}},
+            selected: ''
         };
         expect(prototypes(undefined, action)).toEqual(expectedState);
     });
@@ -45,14 +45,14 @@ describe('prototypes reducer', () => {
         const initialState = {
             isFetching: true,
             isPosting: false,
-            items: [],
-            selected: {}
+            items: {},
+            selected: ''
         };
         const expectedState = {
             isFetching: false,
             isPosting: false,
-            items: [],
-            selected: {}
+            items: {},
+            selected: ''
         };
         expect(prototypes(initialState, action)).toEqual(expectedState);
     });

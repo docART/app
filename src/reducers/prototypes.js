@@ -1,8 +1,8 @@
 const initialState = {
     isFetching: false,
     isPosting: false,
-    items: [],
-    selected: {}
+    items: {},
+    selected: ''
 };
 
 export default function prototypes(state = initialState, action) {

@@ -14,7 +14,11 @@ export function* listPrototypes() {
             let repo = gh.getRepo(currentValue.full_name);
             return call([repo, repo.getContents], 'recipe', 'meta.json', 'true');
         }));
-        yield put({type: 'LIST_PROTOTYPES_SUCCEEDED', items: responses.map((currentValue) => { return currentValue.data; })});
+        const prototypes = {};
+        items.forEach((currentValue, index) => {
+            prototypes[currentValue.full_name] = responses[index].data;
+        });
+        yield put({type: 'LIST_PROTOTYPES_SUCCEEDED', items: prototypes});
     } catch (e) {
         yield put({type: 'LIST_PROTOTYPES_FAILED', message: e.message});
     }
@@ -50,7 +54,7 @@ export function* createPrototype(action) {
                 '\n## Video\n\n' + action.values.video;
         yield call([repo, repo.writeFile], 'recipe', 'README.md', content, 'Update README.md', {});
         yield call([repo, repo.writeFile], 'recipe', 'meta.json', JSON.stringify(action.values), 'Save values', {});
-        yield put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype: prototype.data});
+        yield put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype: prototype.data.full_name});
     } catch (e) {
         yield put({type: 'CREATE_PROTOTYPE_FAILED', message: e.message});
     }

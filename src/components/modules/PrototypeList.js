@@ -9,7 +9,7 @@ const PrototypeList = ({prototypes}) => (
             <h2>Prototipos</h2>
             <div className="divider grey"></div>
             <div className="w-row">
-                {prototypes.map((prototype, index) => (
+                {Object.values(prototypes).map((prototype, index) => (
                     <PrototypeListItem key={index} {...prototype} />
                 ))}
             </div>
@@ -18,7 +18,7 @@ const PrototypeList = ({prototypes}) => (
 );
 
 PrototypeList.propTypes = {
-    prototypes: PropTypes.arrayOf(
+    prototypes: PropTypes.objectOf(
         PropTypes.shape({
             'title': PropTypes.string.isRequired,
             'nick': PropTypes.string.isRequired,

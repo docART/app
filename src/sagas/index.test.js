@@ -11,7 +11,8 @@ describe('sagas', () => {
         const items = [];
 
         expect(generator.next().value).toEqual(call([org, org.getRepos]));
-        expect(generator.next({data: []}).value).toEqual(put({type: 'LIST_PROTOTYPES_SUCCEEDED', items}));
+        expect(generator.next({data: items}).value).toEqual(all([]));
+        expect(generator.next().value).toEqual(put({type: 'LIST_PROTOTYPES_SUCCEEDED', items: {}}));
     });
 
     it('should create prototype', () => {
@@ -39,7 +40,10 @@ describe('sagas', () => {
             description: action.values.title,
             auto_init: true
         };
-        const prototype = {name: action.values.nick};
+        const prototype = {
+            name: action.values.nick,
+            full_name: 'docART/' + action.values.nick
+        };
         const repo = gh.getRepo('docART', action.values.nick);
         const content = '#lorem\nLorem ipsum dolor sit' +
                 '\n## Resumen\n\n' +
@@ -64,6 +68,6 @@ describe('sagas', () => {
         expect(generator.next().value).toEqual(call([repo, repo.getReadme], 'recipe', true));
         expect(generator.next({data: '#lorem\nLorem ipsum dolor sit'}).value).toEqual(call([repo, repo.writeFile], 'recipe', 'README.md', content, 'Update README.md', {}));
         expect(generator.next().value).toEqual(call([repo, repo.writeFile], 'recipe', 'meta.json', JSON.stringify(action.values), 'Save values', {}));
-        expect(generator.next().value).toEqual(put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype}));
+        expect(generator.next().value).toEqual(put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype: prototype.full_name}));
     });
 });
