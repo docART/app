@@ -8,8 +8,8 @@ const Navbar = () => (
                 <h1 className="logo-title">docART</h1>
             </NavLink>
             <nav className="nav-menu w-nav-menu">
-                <NavLink to="/" className="nav-link w-nav-link">←  INICIO</NavLink>
-                <NavLink to="/prototype/form" className="nav-link w-nav-link">COMPARTIR PROTOTIPO</NavLink>
+                <NavLink to="/" className="nav-link w-nav-link">←  Inicio</NavLink>
+                <NavLink to="/prototype/form" className="nav-link w-nav-link">Compartir Prototipo</NavLink>
             </nav>
             <div className="menu-button w-nav-button">
                 <div className="w-icon-nav-menu"></div>
