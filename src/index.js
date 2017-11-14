@@ -28,7 +28,7 @@ render(
             <div>
                 <Navbar/>
                 <Route exact path="/" component={PrototypeList}/>
-                <Route exact path="/prototype/editor" component={PrototypeEditor}/>
+                <Route exact path="/prototype/:name" component={PrototypeEditor}/>
                 <Route exact path="/prototype/form" component={PrototypeWizard}/>
                 <Footer/>
             </div>

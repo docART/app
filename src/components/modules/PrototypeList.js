@@ -7,7 +7,7 @@ import { PrototypeListItem } from './Prototype';
 
 const PrototypeList = ({prototypes}) => (
     <div className="section">
-        <div className="w-container ">
+        <div className="w-container">
             <h2>Prototipos</h2>
             <div className="divider grey"></div>
             <div className="w-row">
