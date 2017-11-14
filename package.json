@@ -5,8 +5,11 @@
   "dependencies": {
     "@aeaton/react-prosemirror": "^0.9.8",
     "@aeaton/react-prosemirror-config-default": "^0.8.5",
+<<<<<<< HEAD
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.5",
+=======
+>>>>>>> a5c7b9eaf20d170c99d4fbb1d6d863aa3b8fb7af
     "draft-js": "^0.10.4",
     "github-api": "^3.0.0",
     "history": "^4.7.2",

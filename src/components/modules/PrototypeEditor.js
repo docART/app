@@ -6,6 +6,7 @@ import {
   MarkedPreview,
   Markedtoolbar } from 'react-markdown-area';
 import { connect } from 'react-redux';
+<<<<<<< HEAD
 
 // Here is a live preview editor
 
@@ -27,6 +28,34 @@ export class PrototypeEditor extends React.Component {
       helpLink: 'marked-area-help-link',
       textContainer: 'marked-area-text-container',
       liveDivider: 'marked-area-live-divider'
+=======
+import { HtmlEditor, MenuBar } from '@aeaton/react-prosemirror';
+import { options, menu } from '@aeaton/react-prosemirror-config-default';
+import Navbar from './Navbar';
+
+class PrototypeEditor extends Component {
+
+    render = () => {
+        const prototype = this.props.match.params.name;
+        return (
+            <div>
+                <Navbar match={this.props.match}/>
+                <h2>Receta breve</h2>
+                <div className="form section">
+                    <HtmlEditor
+                        options={options}
+                        value={this.props.content}
+                        render={({ editor, state, dispatch }) => (
+                            <div className="w-container">
+                                <MenuBar menu={menu} state={state} dispatch={dispatch}/>
+                                {editor}
+                            </div>
+                        )}
+                    />
+                </div>
+            </div>
+        );
+>>>>>>> a5c7b9eaf20d170c99d4fbb1d6d863aa3b8fb7af
     }
   };
   handleTextChange = (e) => {
