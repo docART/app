@@ -26,7 +26,6 @@ render(
     <Provider store={store}>
         <Router>
             <div>
-                <Navbar/>
                 <Route exact path="/" component={PrototypeList}/>
                 <Route exact path="/prototypes/:name" component={PrototypeEditor}/>
                 <Route exact path="/prototype/form" component={PrototypeWizard}/>

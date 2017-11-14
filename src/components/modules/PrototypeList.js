@@ -3,19 +3,22 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { PrototypeListItem } from './Prototype';
+import Navbar from './Navbar';
 
-
-const PrototypeList = ({prototypes}) => (
-    <div className="section">
-        <div className="w-container">
-            <h2>Prototipos</h2>
-            <div className="divider grey"></div>
-            <div className="w-row">
-                {Object.entries(prototypes).map((prototype, index) => (
-                  <Link key={index} to={`/prototype/${prototype[0]}`}>
-                    <PrototypeListItem {...prototype[1]} />
-                  </Link>
-                ))}
+const PrototypeList = ({prototypes, match}) => (
+    <div>
+        <Navbar match={match} />
+        <div className="section">
+            <div className="w-container">
+                <h2>Prototipos</h2>
+                <div className="divider grey"></div>
+                <div className="w-row">
+                    {Object.entries(prototypes).map((prototype, index) => (
+                      <Link key={index} to={`/prototypes/${prototype[0]}`}>
+                        <PrototypeListItem {...prototype[1]} />
+                      </Link>
+                    ))}
+                </div>
             </div>
         </div>
     </div>
