@@ -6,6 +6,7 @@ import createSagaMiddleware from 'redux-saga';
 import { listPrototypesRequested } from './actions';
 import PrototypeWizard from './components/pages/PrototypeWizard';
 import PrototypeList from './components/modules/PrototypeList';
+import PrototypeEditor from './components/modules/PrototypeEditor';
 import Navbar from './components/modules/Navbar';
 import Footer from './components/modules/Footer';
 import reducer from './reducers';
@@ -27,6 +28,7 @@ render(
             <div>
                 <Navbar/>
                 <Route exact path="/" component={PrototypeList}/>
+                <Route exact path="/prototype/editor" component={PrototypeEditor}/>
                 <Route exact path="/prototype/form" component={PrototypeWizard}/>
                 <Footer/>
             </div>
