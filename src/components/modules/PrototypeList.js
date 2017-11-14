@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { PrototypeListItem } from './Prototype';
+
 
 const PrototypeList = ({prototypes}) => (
     <div className="section">
@@ -9,8 +11,10 @@ const PrototypeList = ({prototypes}) => (
             <h2>Prototipos</h2>
             <div className="divider grey"></div>
             <div className="w-row">
-                {Object.values(prototypes).map((prototype, index) => (
-                    <PrototypeListItem key={index} {...prototype} />
+                {Object.entries(prototypes).map((prototype, index) => (
+                  <Link key={index} to={`/prototype/${prototype[0]}`}>
+                    <PrototypeListItem {...prototype[1]} />
+                  </Link>
                 ))}
             </div>
         </div>
