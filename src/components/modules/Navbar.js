@@ -3,16 +3,17 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = ({match}) => {
     const links = [
-        <NavLink to="/" className="nav-link w-nav-link">←  Inicio</NavLink>
+        <NavLink exact to="/" className="nav-link w-nav-link" activeClassName="w--current">←  Inicio</NavLink>
     ];
 
     switch (match.path) {
         case '/':
-            links.push(<NavLink to="/prototype/form" className="nav-link w-nav-link">Compartir Prototipo</NavLink>);
+            links.push(<NavLink exact to="/prototype/form" className="nav-link w-nav-link" activeClassName="w--current">Compartir Prototipo</NavLink>);
             break;
         case '/prototypes/:name':
-            links.push(<NavLink to={`/prototypes/${match.params.name}/recipes`} className="nav-link w-nav-link">Recetas</NavLink>)
-            links.push(<NavLink to={`/prototypes/${match.params.name}/insights`} className="nav-link w-nav-link">Mapa de aprendizaje</NavLink>)
+            links.push(<NavLink exact to={`/prototypes/${match.params.name}`} className="nav-link w-nav-link" activeClassName="w--current">Receta breve</NavLink>)
+            links.push(<NavLink exact to={`/prototypes/${match.params.name}/long`} className="nav-link w-nav-link" activeClassName="w--current">Receta lenta</NavLink>)
+            links.push(<NavLink exact to={`/prototypes/${match.params.name}/insights`} className="nav-link w-nav-link" activeClassName="w--current">Mapa de aprendizaje</NavLink>)
             break;
     }
 
