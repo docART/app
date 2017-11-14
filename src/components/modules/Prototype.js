@@ -8,7 +8,6 @@ const PrototypeListItem = ({nick, logo}) => (
     </div>
 );
 
-
 PrototypeListItem.propTypes = {
     title: PropTypes.string.isRequired,
     nick: PropTypes.string.isRequired,

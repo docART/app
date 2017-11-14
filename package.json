@@ -5,6 +5,7 @@
   "dependencies": {
     "@aeaton/react-prosemirror": "^0.9.8",
     "@aeaton/react-prosemirror-config-default": "^0.8.5",
+    "draft-js": "^0.10.4",
     "github-api": "^3.0.0",
     "history": "^4.7.2",
     "prop-types": "^15.6.0",
