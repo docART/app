@@ -12,6 +12,8 @@ PRODUCTION ENVIRONMENT:
 
 - Execute `docker run -d -p 5000:5000 docart/app`
 
+You can also use Docker Hub image using: `docker run -d -p 5000:5000 dalareo/docart:latest`
+
 DEVELOPMENT ENVIRONMENT:
 
 - Run `docker build . -f Dockerfile-dev -t docart/app:dev` in the main folder
