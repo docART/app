@@ -54,8 +54,9 @@ export function* createPrototype(action) {
                 '\n## Video\n\n' + action.values.video;
         yield call([repo, repo.writeFile], 'recipe', 'README.md', content, 'Update README.md', {});
         yield call([repo, repo.writeFile], 'recipe', 'meta.json', JSON.stringify(action.values), 'Save values', {});
-        yield call([repo, repo.writeFile], 'recipe', 'before.md', '', 'Create document before.md', {});
-        yield call([repo, repo.writeFile], 'recipe', 'future.md', '', 'Create document future.md', {});
+        yield call([repo, repo.writeFile], 'recipe', 'before/README.md', '# Antes', 'Create README.md for before', {});
+        yield call([repo, repo.writeFile], 'recipe', 'prototyping/README.md', '# Durante', 'Create README.md for prototyping', {});
+        yield call([repo, repo.writeFile], 'recipe', 'future/README.md', '# Despues', 'Create README.md for future', {});
         yield put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype: prototype.data.full_name});
     } catch (e) {
         yield put({type: 'CREATE_PROTOTYPE_FAILED', message: e.message});
