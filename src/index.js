@@ -2,7 +2,6 @@ import createHistory from 'history/createBrowserHistory';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Route } from 'react-router'
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import { applyMiddleware, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
@@ -10,6 +9,7 @@ import { listPrototypesRequested } from './actions';
 import PrototypeWizard from './components/pages/PrototypeWizard';
 import PrototypeList from './components/modules/PrototypeList';
 import PrototypeEditor from './components/modules/PrototypeEditor';
+import PrototypeQuickRecipe from './components/modules/PrototypeQuickRecipe';
 import Footer from './components/modules/Footer';
 import reducers from './reducers';
 import sagas from './sagas';
