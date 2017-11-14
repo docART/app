@@ -1,3 +1,4 @@
+import { push } from 'react-router-redux';
 import { all, call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import GitHub from 'github-api';
 
@@ -89,6 +90,7 @@ export function* createPrototype(action) {
         yield call([repo, repo.writeFile], 'recipe', 'prototyping/README.md', '# Durante', 'Create README.md for prototyping', {});
         yield call([repo, repo.writeFile], 'recipe', 'future/README.md', '# Despues', 'Create README.md for future', {});
         yield put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype: prototype.data.full_name, values: action.values});
+        yield put(push('/'));
     } catch (e) {
         yield put({type: 'CREATE_PROTOTYPE_FAILED', message: e.message});
     }
