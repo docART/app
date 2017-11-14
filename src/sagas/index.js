@@ -88,7 +88,7 @@ export function* createPrototype(action) {
         yield call([repo, repo.writeFile], 'recipe', 'departure/README.md', '# Antes', 'Create README.md for departure', {});
         yield call([repo, repo.writeFile], 'recipe', 'prototyping/README.md', '# Durante', 'Create README.md for prototyping', {});
         yield call([repo, repo.writeFile], 'recipe', 'future/README.md', '# Despues', 'Create README.md for future', {});
-        yield put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype: prototype.data.full_name});
+        yield put({type: 'CREATE_PROTOTYPE_SUCCEEDED', prototype: prototype.data.full_name, values: action.values});
     } catch (e) {
         yield put({type: 'CREATE_PROTOTYPE_FAILED', message: e.message});
     }

@@ -56,4 +56,30 @@ describe('prototypes reducer', () => {
         };
         expect(prototypes(initialState, action)).toEqual(expectedState);
     });
+
+    it('should handle CREATE_PROTOTYPE_SUCCEEDED', () => {
+        const action = {
+            type: 'CREATE_PROTOTYPE_SUCCEEDED',
+            prototype: 'lorem-ipsum',
+            values: {
+                title: 'Lorem ipsum dolor sit',
+                nick: 'lorem ipsum'
+            }
+        };
+        const initialState = {
+            isFetching: false,
+            isPosting: true,
+            items: {},
+            selected: ''
+        };
+        const expectedState = {
+            isFetching: false,
+            isPosting: false,
+            items: {
+                [action.prototype]: action.values
+            },
+            selected: 'lorem-ipsum'
+        };
+        expect(prototypes(initialState, action)).toEqual(expectedState);
+    });
 });

@@ -12,11 +12,13 @@ describe('actions', () => {
 
     it('should create action of type CREATE_PROTOTYPE_SUCCEDEDED', () => {
         const prototype = {};
+        const values = {};
         const expectedAction = {
             type: 'CREATE_PROTOTYPE_SUCCEEDED',
-            prototype
+            prototype,
+            values
         };
-        expect(actions.createPrototypeSucceeded(prototype)).toEqual(expectedAction)
+        expect(actions.createPrototypeSucceeded(prototype, values)).toEqual(expectedAction)
     });
 
     it('should create action of type CREATE_PROTOTYPE_FAILED', () => {

@@ -27,7 +27,8 @@ export default function prototypes(state = initialState, action) {
         case 'CREATE_PROTOTYPE_SUCCEEDED':
             return Object.assign({}, state, {
                 isPosting: false,
-                selected: action.prototype
+                selected: action.prototype,
+                items: Object.assign({}, state.items, {[action.prototype]: action.values})
             });
         case 'CREATE_PROTOTYPE_FAILED':
             return Object.assign({}, state, {
