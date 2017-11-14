@@ -26,3 +26,19 @@ export const listPrototypesFailed = (message) => ({
     type: 'LIST_PROTOTYPES_FAILED',
     message
 });
+
+export const fetchDocumentsRequested = (prototype) => ({
+    type: 'FETCH_DOCUMENTS_REQUESTED',
+    prototype
+});
+
+export const fetchDocumentsSucceeded = (prototype, documents) => ({
+    type: 'FETCH_DOCUMENTS_SUCCEDED',
+    prototype,
+    documents
+});
+
+export const fetchDocumentsFaileed = (prototype) => ({
+    type: 'FETCH_DOCUMENTS_FAILED',
+    prototype
+});

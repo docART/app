@@ -1,6 +1,6 @@
 import { all, call, put } from 'redux-saga/effects';
 import GitHub from 'github-api';
-import { listPrototypes, createPrototype } from '.';
+import { createPrototype, fetchDocuments, listPrototypes } from '.';
 
 describe('sagas', () => {
     const gh = new GitHub({token: process.env.REACT_APP_GITHUB_TOKEN});
@@ -13,6 +13,22 @@ describe('sagas', () => {
         expect(generator.next().value).toEqual(call([org, org.getRepos]));
         expect(generator.next({data: items}).value).toEqual(all([]));
         expect(generator.next().value).toEqual(put({type: 'LIST_PROTOTYPES_SUCCEEDED', items: {}}));
+    });
+
+    it ('should fetch documents', () => {
+        const prototype = 'test';
+        const repo = gh.getRepo('docART', prototype);
+        const generator = fetchDocuments({prototype});
+        const documents = {};
+
+        expect(generator.next().value).toEqual(all([
+            call([repo, repo.getContents], 'recipe', ''),
+            call([repo, repo.getContents], 'recipe', 'departure'),
+            call([repo, repo.getContents], 'recipe', 'prototyping'),
+            call([repo, repo.getContents], 'recipe', 'future'),
+        ]));
+        expect(generator.next([]).value).toEqual(all([]));
+        expect(generator.next([]).value).toEqual(put({type: 'FETCH_DOCUMENTS_SUCCEEDED', prototype, documents}));
     });
 
     it('should create prototype', () => {

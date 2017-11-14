@@ -24,6 +24,37 @@ export function* listPrototypes() {
     }
 }
 
+export function* fetchDocuments(action) {
+    const repo = gh.getRepo('docART', action.prototype);
+
+    try {
+        const responses = yield all([
+            call([repo, repo.getContents], 'recipe', ''),
+            call([repo, repo.getContents], 'recipe', 'departure'),
+            call([repo, repo.getContents], 'recipe', 'prototyping'),
+            call([repo, repo.getContents], 'recipe', 'future')
+        ]);
+        const requests = [];
+        responses.forEach((response) => {
+            response.data.forEach((content) => {
+                if (content.type === 'file') {
+                    requests.push(call([repo, repo.getContents], 'recipe', content.path, true));
+                }
+            });
+        });
+        const contents = yield all(requests);
+        const documents = {};
+        const start = (repo.__apiBase + '/repos/docART/' + action.prototype + '/contents/').length;
+        contents.forEach((currentValue) => {
+            documents[currentValue.config.url.substr(start)] = currentValue.data;
+        });
+        yield put({type: 'FETCH_DOCUMENTS_SUCCEEDED', prototype: action.prototype, documents});
+    }
+    catch (e) {
+        yield put({type: 'FETCH_DOCUMENTS_FAILED', prototype: action.prototype, message: e.message});
+    }
+}
+
 export function* createPrototype(action) {
     try {
         const payload = {
@@ -66,6 +97,7 @@ export function* createPrototype(action) {
 export default function* rootSaga() {
     yield all([
         takeLatest('CREATE_PROTOTYPE_REQUESTED', createPrototype),
-        takeEvery('LIST_PROTOTYPES_REQUESTED', listPrototypes)
+        takeEvery('LIST_PROTOTYPES_REQUESTED', listPrototypes),
+        takeEvery('FETCH_DOCUMENTS_REQUESTED', fetchDocuments)
     ]);
 }
