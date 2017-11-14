@@ -13,7 +13,7 @@ describe('prototypes reducer', () => {
 
     it('should handle LIST_PROTOTYPES_REQUESTED', () => {
         const action = {
-            'type': 'LIST_PROTOTYPES_REQUESTED',
+            type: 'LIST_PROTOTYPES_REQUESTED',
         };
         const expectedState = {
             isFetching: true,
@@ -26,8 +26,8 @@ describe('prototypes reducer', () => {
 
     it('should handle LIST_PROTOTYPES_SUCCEEDED', () => {
         const action = {
-            'type': 'LIST_PROTOTYPES_SUCCEEDED',
-            'items': {'test/example': {}}
+            type: 'LIST_PROTOTYPES_SUCCEEDED',
+            items: {'test/example': {}}
         };
         const expectedState = {
             isFetching: false,
@@ -40,7 +40,7 @@ describe('prototypes reducer', () => {
 
     it('should handle LIST_PROTOTYPES_FAILED', () => {
         const action = {
-            'type': 'LIST_PROTOTYPES_FAILED'
+            type: 'LIST_PROTOTYPES_FAILED'
         };
         const initialState = {
             isFetching: true,
