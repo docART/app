@@ -13,11 +13,7 @@ import PrototypeEditor from './components/modules/PrototypeEditor';
 import Footer from './components/modules/Footer';
 import reducers from './reducers';
 import sagas from './sagas';
-<<<<<<< HEAD
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import 'draft-js/dist/Draft.css';
-=======
->>>>>>> a5c7b9eaf20d170c99d4fbb1d6d863aa3b8fb7af
 
 const history = createHistory();
 const sagaMiddleware = createSagaMiddleware();
