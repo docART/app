@@ -12,17 +12,17 @@ let PrototypeWizardPage2 = (props) => {
         <Field name="references" component="textarea" placeholder="Referencias"  required className="darker field w-input" />
         <Field name="logo" component="input" type="url" placeholder="Logo" className="darker field w-input" />
         <Field name="video" component="input" type="url" placeholder="Video" maxLength="256" className="darker field w-input" />
-    
-        <button className="button" type="submit">Dale</button>
+
+        <button className="button form w-button" type="submit">Dale</button>
     </form>
   );
 };
 
 export default reduxForm({
-    form: 'share prototype', 
+    form: 'share prototype',
     destroyOnUnmount: false,
     forceUnregisterOnUnmount: true,
     onSubmit: (values, dispatch) => {
       dispatch(createPrototypeRequested(values));
-  }
+    }
 })(PrototypeWizardPage2);

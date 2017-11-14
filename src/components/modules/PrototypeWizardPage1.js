@@ -19,7 +19,7 @@ let PrototypeWizardPage1 = (props) => {
             <option>Creative Commons Attribution 4.0</option>
             <option>Creative Commons Attribution Share Alike 4.0</option>
         </Field>
-        <button className="button" type="submit">Siguiente</button>
+        <button className="button form w-button" type="submit">Siguiente</button>
     </form>
   );
 };
