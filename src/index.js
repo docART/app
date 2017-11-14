@@ -10,11 +10,6 @@ import { listPrototypesRequested } from './actions';
 import PrototypeWizard from './components/pages/PrototypeWizard';
 import PrototypeList from './components/modules/PrototypeList';
 import PrototypeEditor from './components/modules/PrototypeEditor';
-<<<<<<< 6e21f2f8e88271f8477e1cfd33638b52e3b11513
-=======
-import PrototypeQuickRecipe from './components/modules/PrototypeQuickRecipe';
-import Navbar from './components/modules/Navbar';
->>>>>>> add quick recipe
 import Footer from './components/modules/Footer';
 import reducers from './reducers';
 import sagas from './sagas';
@@ -35,7 +30,7 @@ render(
             <div>
                 <Route exact path="/" component={PrototypeList}/>
                 <Route exact path="/prototypes/:name" component={PrototypeEditor}/>
-                <Route exact path="/prototype/quick" component={PrototypeQuickRecipe}/>
+                <Route exact path="/prototypes/:name/quick" component={PrototypeQuickRecipe}/>
                 <Route exact path="/prototype/form" component={PrototypeWizard}/>
                 <Footer/>
             </div>

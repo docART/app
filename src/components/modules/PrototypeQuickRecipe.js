@@ -30,7 +30,7 @@ let PrototypeQuickRecipe = (props) => {
 };
 
 export default reduxForm({
-    form: 'share prototype',
+    form: 'edit prototype',
     destroyOnUnmount: false,
     forceUnregisterOnUnmount: true,
 })(PrototypeQuickRecipe);
