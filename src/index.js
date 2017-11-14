@@ -12,6 +12,7 @@ import Footer from './components/modules/Footer';
 import reducer from './reducers';
 import sagas from './sagas';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import 'draft-js/dist/Draft.css';
 
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

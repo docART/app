@@ -1,30 +1,60 @@
-import React, { Component } from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { LiveMarkedArea } from 'react-markdown-area';
+import {
+  MarkedInput,
+  MarkedPreview,
+  Markedtoolbar } from 'react-markdown-area';
 import { connect } from 'react-redux';
-import { HtmlEditor, MenuBar } from '@aeaton/react-prosemirror';
-import { options, menu } from '@aeaton/react-prosemirror-config-default';
- 
-class PrototypeEditor extends Component {
 
-    render = () => {
-        const prototype = this.props.match.params.name;
-        return (
-            <div>
-                <h2>Receta breve</h2>
-                <div className="form section">
-                    <HtmlEditor
-                        options={options}
-                        value={this.props.content}
-                        render={({ editor, state, dispatch }) => (
-                            <div className="w-container"> 
-                                <MenuBar menu={menu} state={state} dispatch={dispatch}/>
-                                {editor}
-                            </div>
-                        )}
-                    />
-                </div>
-            </div>
-        );
+// Here is a live preview editor
+
+export class PrototypeEditor extends React.Component {
+    constructor(props) {
+    super(props);
+    this.state = {
+      value: props.defaultValue ? props.defaultValue : ''
+    };
+  }
+  static defaultProps = {
+    id: 'mmc-marked-area',
+    label: '',
+    classNames: {
+      root: 'marked-area',
+      header: 'marked-area-header',
+      activeButton: 'marked-area-button active',
+      defaultButton: 'marked-area-button',
+      helpLink: 'marked-area-help-link',
+      textContainer: 'marked-area-text-container',
+      liveDivider: 'marked-area-live-divider'
     }
+  };
+  handleTextChange = (e) => {
+    this.setState({value: e.target.value});
+  };
+  render = () => {
+    const prototype = this.props.match.params.name;
+    let {id, label, classNames, placeholder} = this.props;
+    let {value} = this.state;
+    return (
+    <section className={classNames.root}>
+
+      <header className={classNames.header}>
+        <label htmlFor={id}>{label}</label>
+      </header>
+
+        <MarkedInput
+          placeholder={placeholder}
+          classNames={classNames}
+          onChange={this.handleTextChange}
+          value={value} />
+
+        <MarkedPreview classNames={classNames}
+          value={value} />
+
+    </section>
+    );
+  }
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -37,11 +67,8 @@ const mapStateToProps = (state, ownProps) => {
     return {
         content: state.documents[prototype]['README.md']
     }
+  };
 
-};
-
- 
- export default connect(
+export default connect(
      mapStateToProps
- )(PrototypeEditor);
-
+)(PrototypeEditor);

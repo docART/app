@@ -5,18 +5,24 @@
   "dependencies": {
     "@aeaton/react-prosemirror": "^0.9.8",
     "@aeaton/react-prosemirror-config-default": "^0.8.5",
+    "babel-polyfill": "^6.26.0",
+    "classnames": "^2.2.5",
+    "draft-js": "^0.10.4",
     "github-api": "^3.0.0",
     "history": "^4.7.2",
     "prop-types": "^15.6.0",
+    "prosemirror-markdown": "^1.0.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
+    "react-markdown-area": "^0.3.8",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.8",
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
     "redux-form": "^7.1.2",
-    "redux-saga": "^0.16.0"
+    "redux-saga": "^0.16.0",
+    "to-markdown": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
