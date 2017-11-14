@@ -1,4 +1,4 @@
-import React, { Coomponent } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = ({match}) => {
@@ -14,6 +14,8 @@ const Navbar = ({match}) => {
             links.push(<NavLink exact to={`/prototypes/${match.params.name}`} className="nav-link w-nav-link" activeClassName="w--current">Receta breve</NavLink>)
             links.push(<NavLink exact to={`/prototypes/${match.params.name}/long`} className="nav-link w-nav-link" activeClassName="w--current">Receta lenta</NavLink>)
             links.push(<NavLink exact to={`/prototypes/${match.params.name}/insights`} className="nav-link w-nav-link" activeClassName="w--current">Mapa de aprendizaje</NavLink>)
+            break;
+        default:
             break;
     }
 
