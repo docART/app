@@ -85,4 +85,35 @@ describe('actions', () => {
         };
         expect(actions.fetchDocumentsFailed(prototype, message)).toEqual(expectedAction)
     });
+
+    it('should create action of type SAVE_DOCUMENT_REQUESTED', () => {
+        const prototype = 'test';
+        const values = {};
+        const expectedAction = {
+            type: 'SAVE_DOCUMENT_REQUESTED',
+            prototype,
+            values
+        };
+        expect(actions.saveDocumentRequested(prototype, values)).toEqual(expectedAction)
+    });
+
+    it('should create action of type SAVE_DOCUMENT_SUCCEEDED', () => {
+        const prototype = 'test';
+        const expectedAction = {
+            type: 'SAVE_DOCUMENT_SUCCEEDED',
+            prototype
+        };
+        expect(actions.saveDocumentSucceeded(prototype)).toEqual(expectedAction)
+    });
+
+    it('should create action of type SAVE_DOCUMENT_FAILED', () => {
+        const prototype = 'test';
+        const message = 'failure';
+        const expectedAction = {
+            type: 'SAVE_DOCUMENT_FAILED',
+            prototype,
+            message
+        };
+        expect(actions.saveDocumentFailed(prototype, message)).toEqual(expectedAction)
+    });
 });

@@ -62,3 +62,20 @@ export const fetchDocumentsFailed = (prototype, message) => ({
     prototype,
     message
 });
+
+export const saveDocumentRequested = (prototype, values) => ({
+    type: 'SAVE_DOCUMENT_REQUESTED',
+    prototype,
+    values
+});
+
+export const saveDocumentSucceeded = (prototype) => ({
+    type: 'SAVE_DOCUMENT_SUCCEEDED',
+    prototype
+});
+
+export const saveDocumentFailed = (prototype, message) => ({
+    type: 'SAVE_DOCUMENT_FAILED',
+    prototype,
+    message
+});
