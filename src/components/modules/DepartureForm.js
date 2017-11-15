@@ -17,7 +17,7 @@ const DepartureForm = (props) => {
             </p>
             <Field name="motivations" component="textarea" placeholder="Motivaciones" required className="darker field w-input" />
             <label htmlFor="motivations" >¿De donde nace tu interés?</label>
-            <Field name="expectetions" component="textarea" placeholder="Expectativas" required className="darker field w-input" />
+            <Field name="expectations" component="textarea" placeholder="Expectativas" required className="darker field w-input" />
             <label htmlFor="expectations" >¿A donde quieres llegar?</label>
             <Field name="skills" component="textarea" placeholder="Habilidades" required className="darker field w-input" />
             <label htmlFor="skills" >¿Qué destreza tienes?</label>
@@ -27,11 +27,11 @@ const DepartureForm = (props) => {
             <label htmlFor="difficulties" >¿Como pudiste llegar aquí?</label>
             <Field name="other" component="textarea" placeholder="Otros" required className="darker field w-input" />
             <label htmlFor="other" >¿Algo más que quieres contar?</label>
-            <Field name="url" component="textarea" placeholder="Url" required className="darker field w-input" />
+            <Field name="url" component="input" type="url" placeholder="Url" required className="darker field w-input" />
             <label htmlFor="url" >¿Qué quieres compartir?</label>
-            <Field name="image" component="textarea" placeholder="Url de la imagen" required className="darker field w-input" />
+            <Field name="image" component="input" type="url" placeholder="Url de la imagen" required className="darker field w-input" />
             <label htmlFor="image" >¿Qué imagen quieres compartir?</label>
-            <Field name="images_references" component="textarea" placeholder="Referencias de la imagen" required className="darker field w-input" />
+            <Field name="imagesreferences" component="input" type="text" placeholder="Referencias de la imagen" required className="darker field w-input" />
             <label htmlFor="image" >¿No olvides la referencia de la imagen?</label>
             <button type="submit" className="button form w-button">Guardar</button>
         </form>

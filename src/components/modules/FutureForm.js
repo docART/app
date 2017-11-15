@@ -21,13 +21,11 @@ const FutureForm = (props) => {
         <label htmlFor="future_development">¿Hay alguna estrategia para continuar?</label>
         <Field name="maintenance" component="textarea" placeholder="Mantenimiento" required className="darker field w-input" />
         <label htmlFor="maintenance">¿Qué cosas hay que hacer para su mantenimiento?</label>
-        <Field name="licence" component="textarea" placeholder="Licencia" required className="darker field w-input" />
-        <label htmlFor="licence">¿Cuál es la forma elegida para comunicar los resultados?</label>
         <Field name="references" component="textarea" placeholder="Referencias" required className="darker field w-input" />
         <label htmlFor="references" >¿Qué referencias deberían tomar en cuenta los interesados?</label>
-        <Field name="image" component="textarea" placeholder="Url de la imagen" required className="darker field w-input" />
+        <Field name="image" component="input" type="url" placeholder="Url de la imagen" required className="darker field w-input" />
         <label htmlFor="image" >¿Qué imagen quieres compartir?</label>
-        <Field name="images_references" component="textarea" placeholder="Referencias de la imagen" required className="darker field w-input" />
+        <Field name="imagesreferences" component="textarea" placeholder="Referencias de la imagen" required className="darker field w-input" />
         <label htmlFor="image" >¿No olvides la referencia de la imagen?</label>
         <button type="submit" className="button form w-button">Guardar</button>
     </form>

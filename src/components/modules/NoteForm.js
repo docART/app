@@ -8,8 +8,20 @@ const NoteForm = (props) => {
     return (
         <form onSubmit={ handleSubmit }>
             <Field name="prototype" component="input" type="hidden"/>
-            <Field name="file" component="input" type="hidden"/>
-            <Field name="content" component="textarea" className="darker field w-input" required/>
+            <Field name="path" component="input" type="hidden"/>
+            <p>
+                Lo que necesitamos es dar cuenta de todos los detalles prácticos imprescindibles para poder  replicar del prototipo.
+                En caso de duda lo mejor es documentar lo sucedido.
+                Cada nota tendrá una URL propia para poder relacionarlas unas con otras.
+                Las notas pueden incluir videos, imágenes, archivos de sonido o textos.
+                Con frecuencia el equipo se divide en grupos, y cada uno de ellos hará sus propias notas.
+            </p>
+            <Field name="title" component="input" type="text" placeholder="Título" maxLength="256" required className="darker field w-input" />
+            <Field name="image" component="input" type="url" placeholder="Imagen" className="darker field w-input" />
+            <Field name="imagesreferences" component="input" type="text" placeholder="Referencias de la imagen" className="darker field w-input" />
+            <Field name="text" component="textarea"  placeholder="Text" required className="darker field w-input" />
+            <label htmlFor="text">Como es una nota, también está compuesta de dos partes: un grafema y un texto explicativo.</label>
+            <Field name="author" component="input" type="text" placeholder="Autor/es" maxLength="256" required className="darker field w-input" />
             <button type="submit" className="button form w-button">Guardar</button>
         </form>
     );
