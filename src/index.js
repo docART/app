@@ -8,6 +8,7 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { listPrototypesRequested } from './actions';
 import PrototypeWizard from './components/pages/PrototypeWizard';
+import PrototypeRecipe from './components/pages/PrototypeRecipe';
 import PrototypeList from './components/modules/PrototypeList';
 import PrototypeQuickRecipe from './components/modules/PrototypeQuickRecipe';
 import Footer from './components/modules/Footer';
@@ -30,6 +31,7 @@ render(
             <div>
                 <Route exact path="/" component={PrototypeList}/>
                 <Route exact path="/prototypes/:name" component={PrototypeQuickRecipe}/>
+                <Route exact path="/prototypes/:name/long" component={PrototypeRecipe}/>
                 <Route exact path="/prototype/form" component={PrototypeWizard}/>
                 <Footer/>
             </div>
