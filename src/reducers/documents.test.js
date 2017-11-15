@@ -72,4 +72,72 @@ describe('documents reducer', () => {
         };
         expect(documents(initialState, action)).toEqual(expectedState);
     });
+
+    it('should handle SAVE_DOCUMENT_REQUESTED', () => {
+        const action = {
+            type: 'SAVE_DOCUMENT_REQUESTED',
+            prototype: 'test',
+            values: {}
+        };
+        const initialState = {
+            test: {
+                isFetching: false,
+                isPosting: false,
+                items: {}
+            }
+        };
+        const expectedState = {
+            test: {
+                isFetching: false,
+                isPosting: true,
+                items: {}
+            }
+        };
+        expect(documents(initialState, action)).toEqual(expectedState);
+    });
+
+    it('should handle SAVE_DOCUMENT_SUCCEEDED', () => {
+        const action = {
+            type: 'SAVE_DOCUMENT_SUCCEEDED',
+            prototype: 'test'
+        };
+        const initialState = {
+            test: {
+                isFetching: false,
+                isPosting: true,
+                items: {}
+            }
+        };
+        const expectedState = {
+            test: {
+                isFetching: false,
+                isPosting: false,
+                items: {}
+            }
+        };
+        expect(documents(initialState, action)).toEqual(expectedState);
+    });
+
+    it('should handle SAVE_DOCUMENT_FAILED', () => {
+        const action = {
+            type: 'SAVE_DOCUMENT_FAILED',
+            prototype: 'test',
+            message: 'failure'
+        };
+        const initialState = {
+            test: {
+                isFetching: false,
+                isPosting: true,
+                items: {}
+            }
+        };
+        const expectedState = {
+            test: {
+                isFetching: false,
+                isPosting: false,
+                items: {}
+            }
+        };
+        expect(documents(initialState, action)).toEqual(expectedState);
+    });
 });
