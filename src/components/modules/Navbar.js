@@ -36,7 +36,8 @@ class Header extends React.Component {
             break;
     }
     return (
-        <Navbar className="fixed-top" light color="faded" expand="md">
+        <Navbar className="bg-light" fixed="top" light color="faded" expand="md">
+          <div className="container">
           <NavbarBrand href="/">docART</NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={this.state.collapsed} navbar>
@@ -44,6 +45,7 @@ class Header extends React.Component {
               {links}
             </Nav>
           </Collapse>
+          </div>
         </Navbar>
     );
   }
