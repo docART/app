@@ -1,4 +1,5 @@
 import React from 'react';
+import uuid from 'uuid/v1';
 import Navbar from '../modules/Navbar';
 import DepartureForm from '../modules/DepartureForm';
 import NoteForm from '../modules/NoteForm';
@@ -7,7 +8,7 @@ import FutureForm from '../modules/FutureForm';
 const DocumentEditor = ({match}) => {
     const prototype = match.params.name;
     const section = match.params.section;
-    const file = match.params.file || '';
+    const file = match.params.file || uuid() + '.json';
     const path = match.params.section + '/' + file;
     let form = null;
 
