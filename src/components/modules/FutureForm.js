@@ -18,42 +18,42 @@ const FutureForm = (props) => {
             Quizás lo más importante sea dedicar un tiempo para indicar desarrollos futuros, formas de uso, alianzas estratégicas,...
         </p>
         <FormGroup>
-            <label htmlFor="share">Compartir</label>
+            <label for="share">Compartir</label>
             <Field name="share" id="share" component={Input} type="textarea" placeholder="Compartir" required/>
-            <Field htmlFor="share" component={ FormText }>¿Como se comparte el prototipo?</Field>
+            <Field for="share" component={ FormText }>¿Como se comparte el prototipo?</Field>
         </FormGroup>
         <FormGroup>
-            <label htmlFor="future_development">Desarrollo futuro</label>
+            <label for="future_development">Desarrollo futuro</label>
             <Field name="future_development" id="future_development" component={Input} type="textarea" placeholder="Desarrollo futuro" required/>
-            <Field htmlFor="future_development" component={ FormText }>¿Hay alguna estrategia para continuar?</Field>
+            <Field for="future_development" component={ FormText }>¿Hay alguna estrategia para continuar?</Field>
         </FormGroup>
         <FormGroup>
-            <label htmlFor="maintenance">Mantenimiento</label>
+            <label for="maintenance">Mantenimiento</label>
             <Field name="maintenance" id="maintenance" component={Input} type="textarea" placeholder="Mantenimiento" required/>
-            <Field htmlFor="maintenance" component={ FormText }>¿Qué cosas hay que hacer para su mantenimiento?</Field>
+            <Field for="maintenance" component={ FormText }>¿Qué cosas hay que hacer para su mantenimiento?</Field>
         </FormGroup>
         <FormGroup>
-            <label htmlFor="references">Referencias</label>
+            <label for="references">Referencias</label>
             <Field name="references" id="references" component={Input} type="textarea" placeholder="Referencias" required/>
-            <Field htmlFor="references" component={ FormText }>¿Qué referencias deberían tomar en cuenta los interesados?</Field>
+            <Field for="references" component={ FormText }>¿Qué referencias deberían tomar en cuenta los interesados?</Field>
         </FormGroup>
         <FormGroup>
-            <label htmlFor="image">Url de la imagen</label>
+            <label for="image">Url de la imagen</label>
             <Field name="image" id="image" component={Input} type="textarea" placeholder="Url de la imagen" required/>
-            <Field htmlFor="image" component={ FormText }>¿Qué imagen quieres compartir?</Field>
+            <Field for="image" component={ FormText }>¿Qué imagen quieres compartir?</Field>
         </FormGroup>
         <FormGroup>
-            <label htmlFor="image">Url de la imagen</label>
+            <label for="image">Url de la imagen</label>
             <Field name="image" id="image" component={Input} type="textarea" placeholder="Url de la imagen" required/>
-            <Field htmlFor="image" component={ FormText }>¿Qué imagen quieres compartir?</Field>
+            <Field for="image" component={ FormText }>¿Qué imagen quieres compartir?</Field>
         </FormGroup>
         <FormGroup>
-            <label htmlFor="imagesreferences">Referencias de la imagen</label>
+            <label for="imagesreferences">Referencias de la imagen</label>
             <Field name="imagesreferences" id="imagesreferences" component={Input} type="textarea" placeholder="Referencias de la imagen" required/>
-            <Field htmlFor="imagesreferences" component={ FormText }>¿No olvides la referencia de la imagen?</Field>
+            <Field for="imagesreferences" component={ FormText }>¿No olvides la referencia de la imagen?</Field>
         <FormGroup>
         </FormGroup>
-            <Field component={Button} type="submit">Update</Field>
+            <Field component={Button} type="submit">Guardar</Field>
         </FormGroup> 
      </Form>
     );

@@ -18,53 +18,53 @@ const DepartureForm = (props) => {
                 Importa  mucho el contexto de partida, el trabajo previo, la gestiones necesarias, los recursos disponibles, y en general todo lo que tenga que ver con las materialidades asociadas a este proyecto.
             </p>
             <FormGroup>
-                <label htmlFor="motivations">Motivaciones</label>
+                <label for="motivations">Motivaciones</label>
                 <Field name="motivations" id="motivations" component={Input} type="textarea" placeholder="Motivaciones" required/>
-                <Field htmlFor="motivations" component={ FormText }>¿De donde nace tu interés?</Field>
+                <Field for="motivations" component={ FormText }>¿De donde nace tu interés?</Field>
             </FormGroup>
             <FormGroup>
-                <label htmlFor="expectations">Expectativas</label>
+                <label for="expectations">Expectativas</label>
                 <Field name="expectations" id="expectations" component={Input} type="textarea" placeholder="Expectativos" required/>
-                <Field htmlFor="expectations" component={ FormText }>¿A donde quieres llegar?</Field>
+                <Field for="expectations" component={ FormText }>¿A donde quieres llegar?</Field>
             </FormGroup>
             <FormGroup>
-                <label htmlFor="skills">Habilidades</label>
+                <label for="skills">Habilidades</label>
                 <Field name="skills" id="skills" component={Input} type="textarea" placeholder="Habilidades" required/>
-                <Field htmlFor="skills" component={ FormText }>¿Qué destreza tienes?</Field>
+                <Field for="skills" component={ FormText }>¿Qué destreza tienes?</Field>
             </FormGroup>
             <FormGroup>
-                <label htmlFor="resources">Recursos de partida</label>
+                <label for="resources">Recursos de partida</label>
                 <Field name="resources" id="resources" component={Input} type="textarea" placeholder="Recursos de partida" required/>
-                <Field htmlFor="resources" component={ FormText }>¿Partes de cero?</Field>
+                <Field for="resources" component={ FormText }>¿Partes de cero?</Field>
             </FormGroup>
             <FormGroup>
-                <label htmlFor="difficulties">Dificultades</label>
+                <label for="difficulties">Dificultades</label>
                 <Field name="difficulties" id="difficulties" component={Input} type="textarea" placeholder="Dificultades" required/>
-                <Field htmlFor="difficulties" component={ FormText }>¿Como pudiste llegar aquí?</Field>
+                <Field for="difficulties" component={ FormText }>¿Como pudiste llegar aquí?</Field>
             </FormGroup>
             <FormGroup>
-                <label htmlFor="other">Otros</label>
+                <label for="other">Otros</label>
                 <Field name="other" id="other" component={Input} type="textarea" placeholder="Otros" required/>
-                <Field htmlFor="other" component={ FormText }>¿Como pudiste llegar aquí?</Field>
+                <Field for="other" component={ FormText }>¿Como pudiste llegar aquí?</Field>
             </FormGroup>
             <FormGroup>
-                <label htmlFor="url">Url</label>
+                <label for="url">Url</label>
                 <Field name="url" id="url" component={Input} type="url" placeholder="Url" required/>
-                <Field htmlFor="url" component={ FormText }>¿Qué quieres compartir?</Field>
+                <Field for="url" component={ FormText }>¿Qué quieres compartir?</Field>
             </FormGroup>
             <FormGroup>
-                <label htmlFor="image">Url de la imagen</label>
+                <label for="image">Url de la imagen</label>
                 <Field name="image" id="image" component={Input} type="textarea" placeholder="Url de la imagen" required/>
-                <Field htmlFor="image" component={ FormText }>¿Qué imagen quieres compartir?</Field>
+                <Field for="image" component={ FormText }>¿Qué imagen quieres compartir?</Field>
             </FormGroup>
             <FormGroup>
-                <label htmlFor="imagesreferences">Referencias de la imagen</label>
+                <label for="imagesreferences">Referencias de la imagen</label>
                 <Field name="imagesreferences" id="imagesreferences" component={Input} type="textarea" placeholder="Referencias de la imagen" required/>
-                <Field htmlFor="imagesreferences" component={ FormText }>¿No olvides la referencia de la imagen?</Field>
+                <Field for="imagesreferences" component={ FormText }>¿No olvides la referencia de la imagen?</Field>
             </FormGroup>
             <FormGroup>
                 <Field component={Button} type="submit">Update</Field>
-             </FormGroup> 
+            </FormGroup> 
         </Form>
     );
 };
