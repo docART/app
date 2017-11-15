@@ -1,6 +1,6 @@
 import { all, call, put } from 'redux-saga/effects';
 import GitHub from 'github-api';
-import { createPrototype, fetchDocuments, listPrototypes } from '.';
+import { createPrototype, fetchDocuments, saveDocument, listPrototypes } from '.';
 
 describe('sagas', () => {
     const gh = new GitHub({token: process.env.REACT_APP_GITHUB_TOKEN});
@@ -29,6 +29,16 @@ describe('sagas', () => {
         ]));
         expect(generator.next([]).value).toEqual(all([]));
         expect(generator.next([]).value).toEqual(put({type: 'FETCH_DOCUMENTS_SUCCEEDED', prototype, documents}));
+    });
+
+    it ('should save document', () => {
+        const prototype = 'test';
+        const values = {section: 'departure', path: 'test.json'};
+        const repo = gh.getRepo('docART', prototype);
+        const generator = saveDocument({prototype, values});
+
+        expect(generator.next().value).toEqual(call([repo, repo.writeFile], 'recipe', values.path, JSON.stringify(values), 'Update departure', {}));
+        expect(generator.next().value).toEqual(put({type: 'SAVE_DOCUMENT_SUCCEEDED', prototype}));
     });
 
     it('should create prototype', () => {
