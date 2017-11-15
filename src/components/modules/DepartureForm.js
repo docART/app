@@ -8,6 +8,7 @@ const DepartureForm = (props) => {
     return (
         <form onSubmit={ handleSubmit }>
             <Field name="prototype" component="input" type="hidden"/>
+            <Field name="section" component="input" type="hidden"/>
             <Field name="path" component="input" type="hidden"/>
             <p>
                 Lo que más nos importa es entender los motivos de tu interés y las consecuencias políticas, sociales, culturales de tu propuesta.
@@ -41,6 +42,7 @@ const DepartureForm = (props) => {
 const mapStateToProps = (state, ownProps) => ({
     initialValues: {
         prototype: ownProps.prototype,
+        section: ownProps.section,
         path: ownProps.path,
         content: state.documents[ownProps.prototype][ownProps.path]
     }

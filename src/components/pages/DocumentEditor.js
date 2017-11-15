@@ -12,11 +12,11 @@ const DocumentEditor = ({match}) => {
     let form = null;
 
     if (section === 'departure') {
-        form = <DepartureForm prototype={prototype} path={path}/>
+        form = <DepartureForm prototype={prototype} section={section} path={path}/>
     } else if (section === 'prototyping') {
-        form = <NoteForm prototype={prototype} path={path}/>
+        form = <NoteForm prototype={prototype} section={section} path={path}/>
     } else if (section === 'future') {
-        form = <FutureForm prototype={prototype} path={path}/>
+        form = <FutureForm prototype={prototype} section={section} path={path}/>
     }
 
     return (

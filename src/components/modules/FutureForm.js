@@ -9,6 +9,7 @@ const FutureForm = (props) => {
     <form onSubmit={ handleSubmit }>
         <Field name="prototype" component="input" type="hidden"/>
         <Field name="path" component="input" type="hidden"/>
+        <Field name="section" component="input" type="hidden"/>
         <p>
             Hacia el final del proceso el equipo debe tomar decisiones sobre cómo compartir, comunicar y licenciar el trabajo realizado.
             Todas estos compromisos deben quedar registrados.
