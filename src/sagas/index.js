@@ -63,6 +63,7 @@ export function* saveDocument(action) {
     try {
         yield call([repo, repo.writeFile], 'recipe', action.values.path, JSON.stringify(action.values), message, {});
         yield put({type: 'SAVE_DOCUMENT_SUCCEEDED', prototype: action.prototype});
+        yield put(push('/prototypes/' + action.prototype + '/long'));
     } catch (e) {
         yield put({type: 'SAVE_DOCUMENT_FAILED', prototype: action.prototype, message: e.message});
     }

@@ -1,5 +1,6 @@
-import { all, call, put } from 'redux-saga/effects';
 import GitHub from 'github-api';
+import { push } from 'react-router-redux';
+import { all, call, put } from 'redux-saga/effects';
 import { createPrototype, fetchDocuments, saveDocument, listPrototypes } from '.';
 
 describe('sagas', () => {
@@ -39,6 +40,7 @@ describe('sagas', () => {
 
         expect(generator.next().value).toEqual(call([repo, repo.writeFile], 'recipe', values.path, JSON.stringify(values), 'Update departure', {}));
         expect(generator.next().value).toEqual(put({type: 'SAVE_DOCUMENT_SUCCEEDED', prototype}));
+        expect(generator.next().value).toEqual(put(push('/prototypes/test/long')));
     });
 
     it('should create prototype', () => {
