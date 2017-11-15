@@ -8,7 +8,7 @@ import {
 import ReactMarkdown from 'react-markdown';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Navbar from '../modules/Navbar';
+import Header from '../modules/Navbar';
 import { fetchDocumentsRequested } from '../../actions';
 
 import '../../../node_modules/react-accessible-accordion/dist/react-accessible-accordion.css';
@@ -40,7 +40,7 @@ class PrototypeRecipe extends Component {
         }
         return (
             <div>
-                <Navbar match={match}/>
+                <Header match={match}/>
                 <div className="section">
                     <div className="w-container">
                         <Accordion>

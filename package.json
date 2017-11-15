@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.0.0-beta",
     "github-api": "^3.0.0",
     "history": "^4.7.2",
     "prop-types": "^15.6.0",
@@ -14,6 +15,7 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.8",
     "react-scripts": "1.0.17",
+    "reactstrap": "^5.0.0-alpha.3",
     "redux": "^3.7.2",
     "redux-form": "^7.1.2",
     "redux-saga": "^0.16.0"

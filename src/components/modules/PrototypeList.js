@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { PrototypeListItem } from './Prototype';
-import Navbar from './Navbar';
+import Header from './Navbar';
 
 const PrototypeList = ({prototypes, match}) => (
     <div>
-        <Navbar match={match} />
+        <Header match={match} />
         <div className="section">
             <div className="w-container">
                 <h2>Prototipos</h2>

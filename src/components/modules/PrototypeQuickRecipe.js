@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import Navbar from './Navbar';
+import Header from './Navbar';
 import { updatePrototypeRequested } from '../../actions';
 
 let PrototypeQuickRecipe = ({handleSubmit, match, isPosting}) => {
     return (
         <div>
-            <Navbar match={match} />
+            <Header match={match} />
             <div className="form section">
                 <div className="w-container">
                     <form onSubmit={ handleSubmit }>
@@ -50,6 +50,3 @@ export default connect(mapStateToProps)(reduxForm({
         dispatch(updatePrototypeRequested(values));
       }
 })(PrototypeQuickRecipe));
-
-
-

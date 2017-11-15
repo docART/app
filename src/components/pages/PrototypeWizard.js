@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import Navbar from '../modules/Navbar';
+import Header from '../modules/Navbar';
 import PrototypeWizardPage1 from '../modules/PrototypeWizardPage1';
 import PrototypeWizardPage2 from '../modules/PrototypeWizardPage2';
 
@@ -27,7 +27,7 @@ class PrototypeWizard extends Component {
         const {page} = this.state;
         return (
             <div>
-                <Navbar match={this.props.match}/>
+                <Header match={this.props.match}/>
                 <div className="form section">
                     <div className="w-container">
                         {page === 1 && <PrototypeWizardPage1 onSubmit={this.nextPage} />}

@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../modules/Navbar';
+import Header from '../modules/Navbar';
 import DepartureForm from '../modules/DepartureForm';
 import NoteForm from '../modules/NoteForm';
 import FutureForm from '../modules/FutureForm';
@@ -21,7 +21,7 @@ const DocumentEditor = ({match}) => {
 
     return (
         <div>
-            <Navbar match={match} />
+            <Header match={match} />
             <div class="section form">
                 <div class="w-container">
                     {form}
