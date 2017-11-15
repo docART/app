@@ -84,7 +84,7 @@ class PrototypeRecipe extends Component {
                                             <ReactMarkdown key={index} source={currentValue}/>
                                         ))}
                                         <p>
-                                            <Link to={`/prototypes/${match.params.name}/recipes/departure`} className="button">+</Link>
+                                            <Link to={`/prototypes/${match.params.name}/recipes/future`} className="button">+</Link>
                                         </p>
                                     </div>
                                 </AccordionItemBody>

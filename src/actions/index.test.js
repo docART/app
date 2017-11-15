@@ -7,7 +7,7 @@ describe('actions', () => {
             type: 'CREATE_PROTOTYPE_REQUESTED',
             values
         };
-        expect(actions.createPrototypeRequested(values)).toEqual(expectedAction)
+        expect(actions.createPrototypeRequested(values)).toEqual(expectedAction);
     });
 
     it('should create action of type CREATE_PROTOTYPE_SUCCEDEDED', () => {
@@ -18,7 +18,7 @@ describe('actions', () => {
             prototype,
             values
         };
-        expect(actions.createPrototypeSucceeded(prototype, values)).toEqual(expectedAction)
+        expect(actions.createPrototypeSucceeded(prototype, values)).toEqual(expectedAction);
     });
 
     it('should create action of type CREATE_PROTOTYPE_FAILED', () => {
@@ -27,7 +27,7 @@ describe('actions', () => {
             type: 'CREATE_PROTOTYPE_FAILED',
             message
         };
-        expect(actions.createPrototypeFailed(message)).toEqual(expectedAction)
+        expect(actions.createPrototypeFailed(message)).toEqual(expectedAction);
     });
 
     it('should create action of type LIST_PROTOTYPES_REQUESTED', () => {
@@ -61,7 +61,7 @@ describe('actions', () => {
             type: 'FETCH_DOCUMENTS_REQUESTED',
             prototype
         };
-        expect(actions.fetchDocumentsRequested(prototype)).toEqual(expectedAction)
+        expect(actions.fetchDocumentsRequested(prototype)).toEqual(expectedAction);
     });
 
     it('should create action of type FETCH_DOCUMENTS_SUCCEEDED', () => {
@@ -72,7 +72,7 @@ describe('actions', () => {
             prototype,
             documents
         };
-        expect(actions.fetchDocumentsSucceeded(prototype, documents)).toEqual(expectedAction)
+        expect(actions.fetchDocumentsSucceeded(prototype, documents)).toEqual(expectedAction);
     });
 
     it('should create action of type FETCH_DOCUMENTS_FAILED', () => {
@@ -83,7 +83,7 @@ describe('actions', () => {
             prototype,
             message
         };
-        expect(actions.fetchDocumentsFailed(prototype, message)).toEqual(expectedAction)
+        expect(actions.fetchDocumentsFailed(prototype, message)).toEqual(expectedAction);
     });
 
     it('should create action of type SAVE_DOCUMENT_REQUESTED', () => {
@@ -94,7 +94,7 @@ describe('actions', () => {
             prototype,
             values
         };
-        expect(actions.saveDocumentRequested(prototype, values)).toEqual(expectedAction)
+        expect(actions.saveDocumentRequested(prototype, values)).toEqual(expectedAction);
     });
 
     it('should create action of type SAVE_DOCUMENT_SUCCEEDED', () => {
@@ -103,7 +103,7 @@ describe('actions', () => {
             type: 'SAVE_DOCUMENT_SUCCEEDED',
             prototype
         };
-        expect(actions.saveDocumentSucceeded(prototype)).toEqual(expectedAction)
+        expect(actions.saveDocumentSucceeded(prototype)).toEqual(expectedAction);
     });
 
     it('should create action of type SAVE_DOCUMENT_FAILED', () => {
@@ -114,6 +114,6 @@ describe('actions', () => {
             prototype,
             message
         };
-        expect(actions.saveDocumentFailed(prototype, message)).toEqual(expectedAction)
+        expect(actions.saveDocumentFailed(prototype, message)).toEqual(expectedAction);
     });
 });

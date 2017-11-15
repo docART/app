@@ -56,6 +56,18 @@ export function* fetchDocuments(action) {
     }
 }
 
+export function* saveDocument(action) {
+    const repo = gh.getRepo('docART', action.prototype);
+    const message = 'Update ' + action.values.section;
+
+    try {
+        yield call([repo, repo.writeFile], 'recipe', action.values.path, JSON.stringify(action.values), message, {});
+        yield put({type: 'SAVE_DOCUMENT_SUCCEEDED', prototype: action.prototype});
+    } catch (e) {
+        yield put({type: 'SAVE_DOCUMENT_FAILED', prototype: action.prototype, message: e.message});
+    }
+}
+
 export function* createPrototype(action) {
     try {
         const payload = {
@@ -100,6 +112,7 @@ export default function* rootSaga() {
     yield all([
         takeLatest('CREATE_PROTOTYPE_REQUESTED', createPrototype),
         takeEvery('LIST_PROTOTYPES_REQUESTED', listPrototypes),
-        takeEvery('FETCH_DOCUMENTS_REQUESTED', fetchDocuments)
+        takeEvery('FETCH_DOCUMENTS_REQUESTED', fetchDocuments),
+        takeEvery('SAVE_DOCUMENT_REQUESTED', saveDocument)
     ]);
 }
