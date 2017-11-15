@@ -6,40 +6,40 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
 
-    this.toggle = this.toggle.bind(this);
+    this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
-      isOpen: false
+      collapsed: true
     };
   }
-  toggle() {
+  toggleNavbar() {
     this.setState({
-      isOpen: !this.state.isOpen
+      collapsed: !this.state.collapsed
     });
   }
   render() {
     const links = [
-        <NavItem><NavLink key="home" exact to="/" className="nav-link" activeClassName="active">←  Inicio</NavLink></NavItem>
+        <NavItem  key="home"><NavLink exact to="/" className="nav-link" activeClassName="active">←  Inicio</NavLink></NavItem>
     ];
     const { match } = this.props;
     switch (match.path) {
         case '/':
-            links.push(<NavItem><NavLink key="form" exact to="/prototype/form" className="nav-link" activeClassName="active">Compartir Prototipo</NavLink></NavItem>);
+            links.push(<NavItem  key="form"><NavLink exact to="/prototype/form" className="nav-link" activeClassName="active">Compartir Prototipo</NavLink></NavItem>);
             break;
         case '/prototypes/:name':
         case '/prototypes/:name/long':
         case '/prototypes/:name/recipes/:section/:file?':
-            links.push(<NavItem><NavLink key="quick" exact to={`/prototypes/${match.params.name}`} className="nav-link" activeClassName="active">Receta rápida</NavLink></NavItem>)
-            links.push(<NavItem><NavLink key="long" exact to={`/prototypes/${match.params.name}/long`} className="nav-link" activeClassName="active">Receta lenta</NavLink></NavItem>)
-            links.push(<NavItem><NavLink key="insights" exact to={`/prototypes/${match.params.name}/insights`} className="nav-link" activeClassName="active">Mapa de aprendizaje</NavLink></NavItem>)
+            links.push(<NavItem key="quick"><NavLink exact to={`/prototypes/${match.params.name}`} className="nav-link" activeClassName="active">Receta rápida</NavLink></NavItem>)
+            links.push(<NavItem key="long"><NavLink exact to={`/prototypes/${match.params.name}/long`} className="nav-link" activeClassName="active">Receta lenta</NavLink></NavItem>)
+            links.push(<NavItem key="insights"><NavLink exact to={`/prototypes/${match.params.name}/insights`} className="nav-link" activeClassName="active">Mapa de aprendizaje</NavLink></NavItem>)
             break;
         default:
             break;
     }
     return (
-        <Navbar color="faded" fixed expand="md">
+        <Navbar className="fixed-top" light color="faded" expand="md">
           <NavbarBrand href="/">docART</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
+          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+          <Collapse isOpen={this.state.collapsed} navbar>
             <Nav className="ml-auto" navbar>
               {links}
             </Nav>

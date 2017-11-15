@@ -1,6 +1,5 @@
 import createHistory from 'history/createBrowserHistory';
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { render } from 'react-dom';
 import { Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
