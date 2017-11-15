@@ -7,6 +7,7 @@ import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import { applyMiddleware, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { listPrototypesRequested } from './actions';
+import DocumentEditor from './components/pages/DocumentEditor';
 import PrototypeWizard from './components/pages/PrototypeWizard';
 import PrototypeRecipe from './components/pages/PrototypeRecipe';
 import PrototypeList from './components/modules/PrototypeList';
@@ -32,6 +33,7 @@ render(
                 <Route exact path="/" component={PrototypeList}/>
                 <Route exact path="/prototypes/:name" component={PrototypeQuickRecipe}/>
                 <Route exact path="/prototypes/:name/long" component={PrototypeRecipe}/>
+                <Route exact path="/prototypes/:name/recipes/:section/:file?" component={DocumentEditor} />
                 <Route exact path="/prototype/form" component={PrototypeWizard}/>
                 <Footer/>
             </div>

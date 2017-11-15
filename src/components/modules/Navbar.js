@@ -12,6 +12,7 @@ const Navbar = ({match}) => {
             break;
         case '/prototypes/:name':
         case '/prototypes/:name/long':
+        case '/prototypes/:name/recipes/:section/:file?':
             links.push(<NavLink key="quick" exact to={`/prototypes/${match.params.name}`} className="nav-link w-nav-link" activeClassName="w--current">Receta rápida</NavLink>)
             links.push(<NavLink key="long" exact to={`/prototypes/${match.params.name}/long`} className="nav-link w-nav-link" activeClassName="w--current">Receta lenta</NavLink>)
             links.push(<NavLink key="insights" exact to={`/prototypes/${match.params.name}/insights`} className="nav-link w-nav-link" activeClassName="w--current">Mapa de aprendizaje</NavLink>)
