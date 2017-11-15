@@ -49,6 +49,6 @@ const mapStateToProps = (state, ownProps) => ({
 export default connect(mapStateToProps)(reduxForm({
     form: 'departure',
     onSubmit: (values, dispatch) => {
-        dispatch(saveDocumentRequested(values.protoype, values));
+        dispatch(saveDocumentRequested(values.prototype, values));
     }
 })(DepartureForm));
