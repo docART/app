@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { LiveMarkedArea } from 'react-markdown-area';
+// import { LiveMarkedArea } from 'react-markdown-area';
 import {
   MarkedInput,
   MarkedPreview,
-  Markedtoolbar } from 'react-markdown-area';
+  MarkedToolbar } from 'react-markdown-area';
 import { connect } from 'react-redux';
 import Navbar from './Navbar';
 
@@ -14,6 +14,7 @@ export class PrototypeEditor extends React.Component {
     constructor(props) {
     super(props);
     this.state = {
+      isPreview: props.isPreview ? props.isPreview : false,
       value: props.defaultValue ? props.defaultValue : ''
     };
   }
@@ -30,6 +31,12 @@ export class PrototypeEditor extends React.Component {
       liveDivider: 'marked-area-live-divider'
     }
   };
+  handleEnablePreview = () => {
+    this.setState({isPreview: true});
+  };
+  handleDisablePreview = () => {
+    this.setState({isPreview: false});
+  };
 
   handleTextChange = (e) => {
     this.setState({value: e.target.value});
@@ -44,24 +51,27 @@ export class PrototypeEditor extends React.Component {
     <Navbar match={this.props.match}/>
       <h2>Receta breve</h2>
       <div className="form section w-container">
-      <section className={classNames.root}>
+        <section className={classNames.root}>
 
-      <header className={classNames.header}>
-        <label htmlFor={id}>{label}</label>
-      </header>
+          <header className={classNames.header}>
+            <label htmlFor={id}>{label}</label>
+            <MarkedToolbar
+              onEnablePreview={this.handleEnablePreview}
+              onDisablePreview={this.handleDisablePreview}
+              isPreview={this.isPreview}
+              {...this.props} />
+          </header>
+            {this.state.isPreview ?
+              <MarkedPreview value={this.state.value} classNames={classNames} /> :
 
-        <MarkedInput
-          placeholder={placeholder}
-          classNames={classNames}
-          onChange={this.handleTextChange}
-          value={value} />
-
-        <MarkedPreview classNames={classNames}
-          value={value} />
-
-      </section>
+                <MarkedInput
+                  placeholder={placeholder}
+                  classNames={classNames}
+                  onChange={this.handleTextChange}
+                  value={this.state.value} />}
+        </section>
       </div>
-      </div>
+    </div>
     );
   }
 }
