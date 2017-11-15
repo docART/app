@@ -6,12 +6,31 @@ import { saveDocumentRequested } from '../../actions';
 const FutureForm = (props) => {
     const { handleSubmit } = props;
     return (
-        <form onSubmit={ handleSubmit }>
-            <Field name="prototype" component="input" type="hidden"/>
-            <Field name="file" component="input" type="hidden"/>
-            <Field name="content" component="textarea" className="darker field w-input" required/>
-            <button type="submit" className="button form w-button">Guardar</button>
-        </form>
+    <form onSubmit={ handleSubmit }>
+        <Field name="prototype" component="input" type="hidden"/>
+        <Field name="path" component="input" type="hidden"/>
+        <p>
+            Hacia el final del proceso el equipo debe tomar decisiones sobre cómo compartir, comunicar y licenciar el trabajo realizado.
+            Todas estos compromisos deben quedar registrados.
+            Este es el momento para recomendar algunas referencias: videos, blogs, libros, artículos, redes, informe,..
+            Quizás lo más importante sea dedicar un tiempo para indicar desarrollos futuros, formas de uso, alianzas estratégicas,...
+        </p>
+        <Field name="share" component="textarea" placeholder="Compartir" required className="darker field w-input" />
+        <label htmlFor="share">¿Cómo se comparte el prototipo? </label>
+        <Field name="future_development" component="textarea" placeholder="Desarrollo Futuro" required className="darker field w-input" />
+        <label htmlFor="future_development">¿Hay alguna estrategia para continuar?</label>
+        <Field name="maintenance" component="textarea" placeholder="Mantenimiento" required className="darker field w-input" />
+        <label htmlFor="maintenance">¿Qué cosas hay que hacer para su mantenimiento?</label>
+        <Field name="licence" component="textarea" placeholder="Licencia" required className="darker field w-input" />
+        <label htmlFor="licence">¿Cuál es la forma elegida para comunicar los resultados?</label>
+        <Field name="references" component="textarea" placeholder="Referencias" required className="darker field w-input" />
+        <label htmlFor="references" >¿Qué referencias deberían tomar en cuenta los interesados?</label>
+        <Field name="image" component="textarea" placeholder="Url de la imagen" required className="darker field w-input" />
+        <label htmlFor="image" >¿Qué imagen quieres compartir?</label>
+        <Field name="images_references" component="textarea" placeholder="Referencias de la imagen" required className="darker field w-input" />
+        <label htmlFor="image" >¿No olvides la referencia de la imagen?</label>
+        <button type="submit" className="button form w-button">Guardar</button>
+    </form>
     );
 };
 

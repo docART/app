@@ -11,6 +11,7 @@ let PrototypeQuickRecipe = ({handleSubmit, match, isPosting}) => {
             <div className="form section">
                 <div className="w-container">
                     <form onSubmit={ handleSubmit }>
+                        <label>Título</label>
                         <Field name="title" component="input" type="text" placeholder="Título" maxLength="256" required className="darker field w-input" />
                         <Field name="nick" component="input" type="text" placeholder="Apodo" maxLength="256" required className="darker field w-input" />
                         <Field name="summary" component="textarea" placeholder="Resumen" required className="darker field w-input" />

@@ -22,8 +22,8 @@ const DocumentEditor = ({match}) => {
     return (
         <div>
             <Navbar match={match} />
-            <div class="section form">
-                <div class="w-container">
+            <div className="section form">
+                <div className="w-container">
                     {form}
                 </div>
             </div>
