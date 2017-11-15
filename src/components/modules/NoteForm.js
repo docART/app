@@ -2,11 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { saveDocumentRequested } from '../../actions';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const NoteForm = (props) => {
     const { handleSubmit } = props;
     return (
-        <form onSubmit={ handleSubmit }>
+        <Form onSubmit={ handleSubmit }>
             <Field name="prototype" component="input" type="hidden"/>
             <Field name="path" component="input" type="hidden"/>
             <p>
@@ -16,14 +17,17 @@ const NoteForm = (props) => {
                 Las notas pueden incluir videos, imágenes, archivos de sonido o textos.
                 Con frecuencia el equipo se divide en grupos, y cada uno de ellos hará sus propias notas.
             </p>
-            <Field name="title" component="input" type="text" placeholder="Título" maxLength="256" required className="darker field w-input" />
+            <FormGroup>
+                <Label for="title">Título</Label>
+                <Field name="title" component="Input" type="text" placeholder="Título" maxLength="256" required/>
+            </FormGroup>    
             <Field name="image" component="input" type="url" placeholder="Imagen" className="darker field w-input" />
             <Field name="imagesreferences" component="input" type="text" placeholder="Referencias de la imagen" className="darker field w-input" />
             <Field name="text" component="textarea"  placeholder="Text" required className="darker field w-input" />
             <label htmlFor="text">Como es una nota, también está compuesta de dos partes: un grafema y un texto explicativo.</label>
             <Field name="author" component="input" type="text" placeholder="Autor/es" maxLength="256" required className="darker field w-input" />
             <button type="submit" className="button form w-button">Guardar</button>
-        </form>
+        </Form>
     );
 };
 
