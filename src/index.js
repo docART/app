@@ -1,6 +1,7 @@
 import createHistory from 'history/createBrowserHistory';
 import React from 'react';
 import { render } from 'react-dom';
+import { Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import { applyMiddleware, compose, createStore } from 'redux';
@@ -13,7 +14,6 @@ import PrototypeQuickRecipe from './components/modules/PrototypeQuickRecipe';
 import Footer from './components/modules/Footer';
 import reducers from './reducers';
 import sagas from './sagas';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 const history = createHistory();
 const sagaMiddleware = createSagaMiddleware();
