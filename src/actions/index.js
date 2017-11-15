@@ -52,12 +52,13 @@ export const fetchDocumentsRequested = (prototype) => ({
 });
 
 export const fetchDocumentsSucceeded = (prototype, documents) => ({
-    type: 'FETCH_DOCUMENTS_SUCCEDED',
+    type: 'FETCH_DOCUMENTS_SUCCEEDED',
     prototype,
     documents
 });
 
-export const fetchDocumentsFaileed = (prototype) => ({
+export const fetchDocumentsFailed = (prototype, message) => ({
     type: 'FETCH_DOCUMENTS_FAILED',
-    prototype
+    prototype,
+    message
 });

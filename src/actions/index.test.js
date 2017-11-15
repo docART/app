@@ -2,7 +2,7 @@ import * as actions from '.';
 
 describe('actions', () => {
     it('should create action of type CREATE_PROTOTYPE_REQUESTED', () => {
-        const values = [];
+        const values = {};
         const expectedAction = {
             type: 'CREATE_PROTOTYPE_REQUESTED',
             values
@@ -53,5 +53,36 @@ describe('actions', () => {
             message
         };
         expect(actions.listPrototypesFailed(message)).toEqual(expectedAction)
+    });
+
+    it('should create action of type FETCH_DOCUMENTS_REQUESTED', () => {
+        const prototype = 'test';
+        const expectedAction = {
+            type: 'FETCH_DOCUMENTS_REQUESTED',
+            prototype
+        };
+        expect(actions.fetchDocumentsRequested(prototype)).toEqual(expectedAction)
+    });
+
+    it('should create action of type FETCH_DOCUMENTS_SUCCEEDED', () => {
+        const prototype = 'test';
+        const documents = {};
+        const expectedAction = {
+            type: 'FETCH_DOCUMENTS_SUCCEEDED',
+            prototype,
+            documents
+        };
+        expect(actions.fetchDocumentsSucceeded(prototype, documents)).toEqual(expectedAction)
+    });
+
+    it('should create action of type FETCH_DOCUMENTS_FAILED', () => {
+        const prototype = 'test';
+        const message = 'failure';
+        const expectedAction = {
+            type: 'FETCH_DOCUMENTS_FAILED',
+            prototype,
+            message
+        };
+        expect(actions.fetchDocumentsFailed(prototype, message)).toEqual(expectedAction)
     });
 });
