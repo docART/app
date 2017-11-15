@@ -30,10 +30,24 @@ class PrototypeRecipe extends Component {
                     return;
                 }
                 if (currentValue[0].startsWith('departure')) {
-                    departure.push(currentValue[1]);
+                    let markdown = '';
+                    Object.entries(currentValue[1]).map((field) => {
+                        markdown += '### ' + field[0] + '\n\n'  + field[1] + '\n';
+                    });
+                    departure.push(markdown);
                 } else if (currentValue[0].startsWith('prototyping')) {
+                    let markdown = '';
+                    Object.entries(currentValue[1]).map((field) => {
+                        markdown += '### ' + field[0] + '\n\n'  + field[1] + '\n';
+                    });
+                    departure.push(markdown);
                     prototyping.push(currentValue[1]);
                 } else if (currentValue[0].startsWith('future')) {
+                    let markdown = '';
+                    Object.entries(currentValue[1]).map((field) => {
+                        markdown += '### ' + field[0] + '\n\n'  + field[1] + '\n';
+                    });
+                    departure.push(markdown);
                     future.push(currentValue[1]);
                 }
             });
