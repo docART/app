@@ -14,7 +14,7 @@ const PrototypeList = ({prototypes, match}) => (
                 <div className="divider grey"></div>
                 <div className="w-row">
                     {Object.entries(prototypes).map((prototype, index) => (
-                      <Link key={index} to={`/prototypes/${prototype[0]}`}>
+                      <Link key={index} to={`/prototypes/${prototype[0]}/quick`}>
                         <PrototypeListItem {...prototype[1]} />
                       </Link>
                     ))}

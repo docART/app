@@ -14,6 +14,24 @@ export const createPrototypeFailed = (message) => ({
     message
 });
 
+export const updatePrototypeRequested = (prototype, values) => ({
+    type: 'UPDATE_PROTOTYPE_REQUESTED',
+    prototype,
+    values
+});
+
+export const updatePrototypeSucceeded = (prototype, values) => ({
+    type: 'UPDATE_PROTOTYPE_SUCCEEDED',
+    prototype,
+    values
+});
+
+export const updatePrototypeFailed = (prototype, message) => ({
+    type: 'UPDATE_PROTOTYPE_FAILED',
+    prototype,
+    message
+});
+
 export const listPrototypesRequested = () => ({
     type: 'LIST_PROTOTYPES_REQUESTED'
 });
