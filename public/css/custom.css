@@ -3,3 +3,8 @@
 body {
   padding-top: 56px;
 }
+
+.prototype-image {
+  width: 300px;
+  height: 300px;
+}

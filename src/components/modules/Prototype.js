@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Col} from 'reactstrap';
 
 const PrototypeListItem = ({nick, logo}) => (
-    <div className="w-col w-col-3 w-col-small-6">
-        <img className="team-image" src={logo} alt={nick}/>
+    <div>
+      <Col>
+        <img className="img-thumbnail rounded prototype-image" src={logo} alt={nick}/>
         <h3 className="team-title">{nick}</h3>
+      </Col>
     </div>
 );
 
