@@ -24,7 +24,7 @@ let PrototypeWizardPage1 = (props) => {
         </FormGroup>
         <FormGroup>
             <Label for="team">Equipo</Label>
-            <Field name="team" component={Input} type="textarea" placeholder="Equipo" required/>
+            <Field name="team" component={Input} type="textarea" placeholder="Equipo"/>
         </FormGroup>
         <FormGroup>
             <Label for="promoter">Promotor</Label>
@@ -44,7 +44,9 @@ let PrototypeWizardPage1 = (props) => {
             <option>Creative Commons Attribution Share Alike 4.0</option>
             </Field>
         </FormGroup>
-        <button className="button form w-button" type="submit">Siguiente</button>
+        <FormGroup>
+            <Field component={Button} type="submit">Siguiente</Field>
+        </FormGroup>
     </Form>
   );
 };

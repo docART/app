@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import Header from './Navbar';
 import { updatePrototypeRequested } from '../../actions';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 let PrototypeQuickRecipe = ({handleSubmit, match, isPosting}) => {
     return (
@@ -10,29 +11,63 @@ let PrototypeQuickRecipe = ({handleSubmit, match, isPosting}) => {
             <Header match={match} />
             <div className="form section">
                 <div className="w-container">
-                    <form onSubmit={ handleSubmit }>
-                        <Field name="title" component="input" type="text" placeholder="Título" maxLength="256" required className="darker field w-input" />
-                        <Field name="nick" component="input" type="text" placeholder="Apodo" maxLength="256" required className="darker field w-input" />
-                        <Field name="summary" component="textarea" placeholder="Resumen" required className="darker field w-input" />
-                        <Field name="motivations" component="textarea" placeholder="Motivaciones" required className="darker field w-input" />
-                        <Field name="team" component="textarea" type="" placeholder="Equipo" required className="darker field w-input" />
-                        <Field name="promoter" component="input" type="text" placeholder="Promotor" maxLength="256" required className="darker field w-input" />
-                        <Field name="email" component="input" type="email" placeholder="Correo electrónico" maxLength="256" required className="darker field w-input" />
-                        <Field name="license" component="select" required className="darker field w-input">
-                            <option></option>
-                            <option>GNU Free Documentation License</option>
-                            <option>Creative Commons Zero v1.0 Universal</option>
-                            <option>Creative Commons Attribution 4.0</option>
-                            <option>Creative Commons Attribution Share Alike 4.0</option>
-                        </Field>
-                        <Field name="procedure" component="textarea" placeholder="Procedimiento"  required className="darker field w-input" />
-                        <Field name="schedule" component="textarea" placeholder="Cronograma"  required className="darker field w-input" />
-                        <Field name="requirements" component="textarea" placeholder="Necesidades"  required className="darker field w-input" />
-                        <Field name="references" component="textarea" placeholder="Referencias"  required className="darker field w-input" />
-                        <Field name="logo" component="input" type="url" placeholder="Logo" className="darker field w-input" />
-                        <Field name="video" component="input" type="url" placeholder="Video" maxLength="256" className="darker field w-input" />
-                        <button className="button form w-button" type="submit" disabled={isPosting}>Dale</button>
-                    </form>
+                    <Form onSubmit={ handleSubmit }>
+                        <FormGroup>
+                            <Label for="title">Título</Label>
+                            <Field name="title" id="title" component={Input} type="text" placeholder="Título" maxLength="256" required/>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="nick">Apodo</Label>
+                            <Field name="nick" id="nick" component={Input} type="text" placeholder="Apodo" maxLength="256" required/>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="summary">Resumen</Label>
+                            <Field name="summary" id="summary" component={Input} type="textarea" placeholder="Resumen" required  />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="motivations">Motivaciones</Label>
+                            <Field name="motivations" id="motivations" component={Input} type="textarea" placeholder="Motivaciones" required />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="team">Equipo</Label>
+                            <Field name="team" component={Input} type="textarea" placeholder="Equipo"/>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="promoter">Promotor</Label>
+                            <Field name="promoter" id="promoter" component={Input} type="text" placeholder="Promotor" maxLength="256" required />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="email">Email</Label>
+                            <Field name="email" id="email" component={Input} type="email" placeholder="Email" maxLength="256" required />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="procedure">Procedimientos</Label>
+                            <Field name="procedure" id="procedure" component={Input} type="textarea" placeholder="Procedimientos" required  />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="schedule">Cronograma</Label>
+                            <Field name="schedule" id="schedule" component={Input} type="textarea" placeholder="Cronograma" required  />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="requirements">Requerimientos</Label>
+                            <Field name="requirements" id="requirements" component={Input} type="textarea" placeholder="Requerimientos" required  />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="references">Referencias</Label>
+                            <Field name="references" id="references" component={Input} type="textarea" placeholder="Referencias" required  />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="logo">Logo</Label>
+                            <Field name="logo" id="logo" component={Input} type="url" placeholder="Logo" required/>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="video">Video</Label>
+                            <Field name="video" id="video" component={Input} type="url" placeholder="Video" required/>
+                        </FormGroup>
+                        <FormGroup>
+                            <Field component={Button} type="submit" disabled={isPosting}>Update</Field>
+                        </FormGroup>                    
+                    </Form>
                 </div>
             </div>
         </div>

@@ -2,11 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { saveDocumentRequested } from '../../actions';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const DepartureForm = (props) => {
     const { handleSubmit } = props;
     return (
-        <form onSubmit={ handleSubmit }>
+        <Form onSubmit={ handleSubmit }>
             <Field name="prototype" component="input" type="hidden"/>
             <Field name="section" component="input" type="hidden"/>
             <Field name="path" component="input" type="hidden"/>
@@ -16,26 +17,55 @@ const DepartureForm = (props) => {
                 También nos importan las dificultades, las dudas y las oportunidades.
                 Importa  mucho el contexto de partida, el trabajo previo, la gestiones necesarias, los recursos disponibles, y en general todo lo que tenga que ver con las materialidades asociadas a este proyecto.
             </p>
-            <Field name="motivations" component="textarea" placeholder="Motivaciones" required className="darker field w-input" />
-            <label htmlFor="motivations" >¿De donde nace tu interés?</label>
-            <Field name="expectations" component="textarea" placeholder="Expectativas" required className="darker field w-input" />
-            <label htmlFor="expectations" >¿A donde quieres llegar?</label>
-            <Field name="skills" component="textarea" placeholder="Habilidades" required className="darker field w-input" />
-            <label htmlFor="skills" >¿Qué destreza tienes?</label>
-            <Field name="resources" component="textarea" placeholder="Recursos de partida" required className="darker field w-input" />
-            <label htmlFor="resources" >¿Partes de cero?</label>
-            <Field name="difficulties" component="textarea" placeholder="Dificultades" required className="darker field w-input" />
-            <label htmlFor="difficulties" >¿Como pudiste llegar aquí?</label>
-            <Field name="other" component="textarea" placeholder="Otros" required className="darker field w-input" />
-            <label htmlFor="other" >¿Algo más que quieres contar?</label>
-            <Field name="url" component="input" type="url" placeholder="Url" required className="darker field w-input" />
-            <label htmlFor="url" >¿Qué quieres compartir?</label>
-            <Field name="image" component="input" type="url" placeholder="Url de la imagen" required className="darker field w-input" />
-            <label htmlFor="image" >¿Qué imagen quieres compartir?</label>
-            <Field name="imagesreferences" component="input" type="text" placeholder="Referencias de la imagen" required className="darker field w-input" />
-            <label htmlFor="image" >¿No olvides la referencia de la imagen?</label>
-            <button type="submit" className="button form w-button">Guardar</button>
-        </form>
+            <FormGroup>
+                <label htmlFor="motivations">Motivaciones</label>
+                <Field name="motivations" id="motivations" component={Input} type="textarea" placeholder="Motivaciones" required/>
+                <Field htmlFor="motivations" component={ FormText }>¿De donde nace tu interés?</Field>
+            </FormGroup>
+            <FormGroup>
+                <label htmlFor="expectations">Expectativas</label>
+                <Field name="expectations" id="expectations" component={Input} type="textarea" placeholder="Expectativos" required/>
+                <Field htmlFor="expectations" component={ FormText }>¿A donde quieres llegar?</Field>
+            </FormGroup>
+            <FormGroup>
+                <label htmlFor="skills">Habilidades</label>
+                <Field name="skills" id="skills" component={Input} type="textarea" placeholder="Habilidades" required/>
+                <Field htmlFor="skills" component={ FormText }>¿Qué destreza tienes?</Field>
+            </FormGroup>
+            <FormGroup>
+                <label htmlFor="resources">Recursos de partida</label>
+                <Field name="resources" id="resources" component={Input} type="textarea" placeholder="Recursos de partida" required/>
+                <Field htmlFor="resources" component={ FormText }>¿Partes de cero?</Field>
+            </FormGroup>
+            <FormGroup>
+                <label htmlFor="difficulties">Dificultades</label>
+                <Field name="difficulties" id="difficulties" component={Input} type="textarea" placeholder="Dificultades" required/>
+                <Field htmlFor="difficulties" component={ FormText }>¿Como pudiste llegar aquí?</Field>
+            </FormGroup>
+            <FormGroup>
+                <label htmlFor="other">Otros</label>
+                <Field name="other" id="other" component={Input} type="textarea" placeholder="Otros" required/>
+                <Field htmlFor="other" component={ FormText }>¿Como pudiste llegar aquí?</Field>
+            </FormGroup>
+            <FormGroup>
+                <label htmlFor="url">Url</label>
+                <Field name="url" id="url" component={Input} type="url" placeholder="Url" required/>
+                <Field htmlFor="url" component={ FormText }>¿Qué quieres compartir?</Field>
+            </FormGroup>
+            <FormGroup>
+                <label htmlFor="image">Url de la imagen</label>
+                <Field name="image" id="image" component={Input} type="textarea" placeholder="Url de la imagen" required/>
+                <Field htmlFor="image" component={ FormText }>¿Qué imagen quieres compartir?</Field>
+            </FormGroup>
+            <FormGroup>
+                <label htmlFor="imagesreferences">Referencias de la imagen</label>
+                <Field name="imagesreferences" id="imagesreferences" component={Input} type="textarea" placeholder="Referencias de la imagen" required/>
+                <Field htmlFor="imagesreferences" component={ FormText }>¿No olvides la referencia de la imagen?</Field>
+            </FormGroup>
+            <FormGroup>
+                <Field component={Button} type="submit">Update</Field>
+             </FormGroup> 
+        </Form>
     );
 };
 
