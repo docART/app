@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import Header from './Navbar';
 import { updatePrototypeRequested } from '../../actions';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, FormText } from 'reactstrap';
 
 let PrototypeQuickRecipe = ({handleSubmit, match, isPosting}) => {
     return (
