@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Col } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 const PrototypeListItem = ({nick, logo, name}) => (
