@@ -9,6 +9,7 @@ let PrototypeQuickRecipe = ({handleSubmit, match, isPosting}) => {
     return (
         <div>
             <Header match={match} />
+            <h1>{`${match.params.name}`}</h1>
             <div className="form section">
                 <div className="w-container">
                     <Form onSubmit={ handleSubmit }>

@@ -8,6 +8,7 @@ import Header from './Navbar';
 const PrototypeList = ({prototypes, match}) => (
     <div>
         <Header match={match} />
+        <h1>Lista de prototipos</h1>
         <Row>
             {Object.entries(prototypes).map((prototype, index) => (
                 <Col key={index} className="vcenter" lg="3" md="4" sm="6" xs="12">

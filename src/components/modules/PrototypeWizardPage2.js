@@ -8,6 +8,7 @@ let PrototypeWizardPage2 = (props) => {
   const { handleSubmit, isPosting } = props;
   return (
     <Form onSubmit={ handleSubmit }>
+      <h1>Compartir Prototipo</h1>
         <FormGroup>
             <Label for="procedure">Procedimientos</Label>
             <Field name="procedure" id="procedure" component="textarea" className="form-control" placeholder="Procedimientos" required  />

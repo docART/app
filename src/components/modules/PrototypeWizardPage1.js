@@ -6,6 +6,7 @@ let PrototypeWizardPage1 = (props) => {
   const { handleSubmit } = props;
   return (
     <Form onSubmit={ handleSubmit }>
+      <h1>Compartir prototipo</h1>
         <FormGroup>
             <Label for="title">Título</Label>
             <Field name="title" id="title" component="input" className="form-control" type="text" placeholder="Título" maxLength="256" required/>

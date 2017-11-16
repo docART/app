@@ -59,6 +59,7 @@ class PrototypeRecipe extends Component {
         return (
             <div>
                 <Header match={match}/>
+                <h1>{`${match.params.name}`}</h1>
                 <RecipeItem header="Antes" isOpen>
                     {departure.map((currentValue, index) => (
                         <ReactMarkdown key={index} source={currentValue}/>

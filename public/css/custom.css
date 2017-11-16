@@ -2,7 +2,7 @@
 
 body {
   padding-top: 56px;
-  margin-top: calc(56px + 1rem);
+  /** margin-top: calc(56px + 1rem); **/
 }
 
 .btn-primary {
