@@ -2,7 +2,7 @@ import React from 'react';
 import uuid from 'uuid/v1';
 import Header from '../modules/Navbar';
 import DepartureForm from '../modules/DepartureForm';
-import NoteForm from '../modules/NoteForm';
+import SlowWizard from './SlowWizard';
 import FutureForm from '../modules/FutureForm';
 
 const DocumentEditor = ({match}) => {
@@ -15,7 +15,7 @@ const DocumentEditor = ({match}) => {
     if (section === 'departure') {
         form = <DepartureForm prototype={prototype} section={section} path={path}/>
     } else if (section === 'prototyping') {
-        form = <NoteForm prototype={prototype} section={section} path={path}/>
+        form = <SlowWizard prototype={prototype} section={section} path={path}/>
     } else if (section === 'future') {
         form = <FutureForm prototype={prototype} section={section} path={path}/>
     }

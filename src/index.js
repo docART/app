@@ -9,6 +9,7 @@ import createSagaMiddleware from 'redux-saga';
 import { listPrototypesRequested } from './actions';
 import DocumentEditor from './components/pages/DocumentEditor';
 import PrototypeWizard from './components/pages/PrototypeWizard';
+import SlowWizard from './components/pages/SlowWizard';
 import PrototypeRecipe from './components/pages/PrototypeRecipe';
 import PrototypeList from './components/modules/PrototypeList';
 import PrototypeQuickRecipe from './components/modules/PrototypeQuickRecipe';
