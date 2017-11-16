@@ -18,9 +18,7 @@ class RecipeItem extends Component {
             <Card>
                 <CardHeader onClick={this.toggle}>{this.props.header}</CardHeader>
                 <Collapse isOpen={this.state.collapse}>
-                    <CardBody>
-                        {this.props.children}
-                    </CardBody>
+                    {this.props.children}
                 </Collapse>
             </Card>
         );

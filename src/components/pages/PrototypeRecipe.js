@@ -22,7 +22,23 @@ class PrototypeRecipe extends Component {
         const future = [];
         const futureLinks = [];
         const toMarkdown = function (field) {
-            return '### ' + field[0] + '\n\n'  + field[1];
+            const fieldMap = {
+                other: 'Otros',
+                motivations: 'Motivaciones',
+                expectations: 'Expectativas',
+                skills: 'Habilidades',
+                difficulties: 'Dificultades',
+                resources: 'Recursos de partida',
+                url: 'URL'
+            };
+            if (field[0] === 'title') {
+                return '## ' + field[1];
+            } else if (field[0] === 'image') {
+                return '![imagen de la nota](' + field[1] + ')\n';
+            } else if (field[0] === 'imagesreferences') {
+                return field[1];
+            }
+            return '### ' + fieldMap[field[0]] + '\n\n'  + field[1];
         }
 
         if (documents[match.params.name]) {
@@ -60,15 +76,16 @@ class PrototypeRecipe extends Component {
                 <Header match={match}/>
                 <h1>{`${match.params.name}`}</h1>
                 <RecipeItem header="Antes" isOpen>
-                    {departure.map((currentValue, index) => (
-                        <ReactMarkdown key={index} source={currentValue}/>
-                    ))}
-                    <p>
-                        {departureLinks[0]}
-                    </p>
+                    <CardBody>
+                        {departure.map((currentValue, index) => (
+                            <ReactMarkdown key={index} source={currentValue}/>
+                        ))}
+                        <p className="mb-0">
+                            {departureLinks[0]}
+                        </p>
+                    </CardBody>
                 </RecipeItem>
-                <Card>
-                    <CardHeader>Durante</CardHeader>
+                <RecipeItem header="Durante">
                     <ListGroup className="list-group-flush">
                         {prototyping.map((currentValue, index) => (
                             <ListGroupItem key={index}>
@@ -80,14 +97,16 @@ class PrototypeRecipe extends Component {
                     <CardBody>
                         {prototypingLinks.pop()}
                     </CardBody>
-                </Card>
+                </RecipeItem>
                 <RecipeItem header="Después">
-                    {future.map((currentValue, index) => (
-                        <ReactMarkdown key={index} source={currentValue}/>
-                    ))}
-                    <p>
-                        {futureLinks[0]}
-                    </p>
+                    <CardBody>
+                        {future.map((currentValue, index) => (
+                            <ReactMarkdown key={index} source={currentValue}/>
+                        ))}
+                        <p className="mb-0">
+                            {futureLinks[0]}
+                        </p>
+                    </CardBody>
                 </RecipeItem>
             </div>
         );
