@@ -25,24 +25,23 @@ class PrototypeRecipe extends Component {
         }
 
         if (documents[match.params.name]) {
-            Object.entries(documents[match.params.name].items).map((currentValue) => {
-                if (currentValue[0].endsWith('README.md')) {
-                    return;
-                }
-                if (currentValue[0].startsWith('departure')) {
-                    let markdown = Object.entries(currentValue[1]).map(toMarkdown).join('\n');
-                    departure.push(markdown);
-                    departureLinks.push(<Link to={`/prototypes/${match.params.name}/recipes/${currentValue[0]}`} className="btn btn-primary">Editar</Link>);
-                } else if (currentValue[0].startsWith('prototyping')) {
-                    let markdown = Object.entries(currentValue[1]).map(toMarkdown).join('\n');
-                    departure.push(markdown);
-                    prototyping.push(currentValue[1]);
-                    prototypingLinks.push(<Link to={`/prototypes/${match.params.name}/recipes/${currentValue[0]}`} className="btn btn-primary">Editar</Link>);
-                } else if (currentValue[0].startsWith('future')) {
-                    let markdown = Object.entries(currentValue[1]).map(toMarkdown).join('\n');
-                    departure.push(markdown);
-                    future.push(currentValue[1]);
-                    futureLinks.push(<Link to={`/prototypes/${match.params.name}/recipes/${currentValue[0]}`} className="btn btn-primary">Editar</Link>);
+            Object.entries(documents[match.params.name].items).forEach((currentValue) => {
+                if (!currentValue[0].endsWith('README.md')) {
+                    if (currentValue[0].startsWith('departure')) {
+                        let markdown = Object.entries(currentValue[1]).map(toMarkdown).join('\n');
+                        departure.push(markdown);
+                        departureLinks.push(<Link to={`/prototypes/${match.params.name}/recipes/${currentValue[0]}`} className="btn btn-primary">Editar</Link>);
+                    } else if (currentValue[0].startsWith('prototyping')) {
+                        let markdown = Object.entries(currentValue[1]).map(toMarkdown).join('\n');
+                        departure.push(markdown);
+                        prototyping.push(currentValue[1]);
+                        prototypingLinks.push(<Link to={`/prototypes/${match.params.name}/recipes/${currentValue[0]}`} className="btn btn-primary">Editar</Link>);
+                    } else if (currentValue[0].startsWith('future')) {
+                        let markdown = Object.entries(currentValue[1]).map(toMarkdown).join('\n');
+                        departure.push(markdown);
+                        future.push(currentValue[1]);
+                        futureLinks.push(<Link to={`/prototypes/${match.params.name}/recipes/${currentValue[0]}`} className="btn btn-primary">Editar</Link>);
+                    }
                 }
             });
         }
