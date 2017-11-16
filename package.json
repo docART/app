@@ -6,6 +6,7 @@
     "bootstrap": "^4.0.0-beta",
     "github-api": "^3.0.0",
     "history": "^4.7.2",
+    "jquery": "^1.9.1",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
     "react-accessible-accordion": "^1.0.1",
