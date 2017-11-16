@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
-import {
-    Accordion,
-    AccordionItem,
-    AccordionItemTitle,
-    AccordionItemBody,
-} from 'react-accessible-accordion';
 import ReactMarkdown from 'react-markdown';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Header from '../modules/Navbar';
+import RecipeItem from '../modules/RecipeItem';
 import { fetchDocumentsRequested } from '../../actions';
-
-import '../../../node_modules/react-accessible-accordion/dist/react-accessible-accordion.css';
 
 class PrototypeRecipe extends Component {
 
@@ -55,57 +48,30 @@ class PrototypeRecipe extends Component {
         return (
             <div>
                 <Header match={match}/>
-                <div className="section">
-                    <div className="w-container">
-                        <Accordion>
-                            <AccordionItem>
-                                <AccordionItemTitle>
-                                    <h2>Antes</h2>
-                                </AccordionItemTitle>
-                                <AccordionItemBody>
-                                    <div>
-                                        {departure.map((currentValue, index) => (
-                                            <ReactMarkdown key={index} source={currentValue}/>
-                                        ))}
-                                        <p>
-                                            <Link to={`/prototypes/${match.params.name}/recipes/departure`} className="button">+</Link>
-                                        </p>
-                                    </div>
-                                </AccordionItemBody>
-                            </AccordionItem>
-                            <AccordionItem>
-                                <AccordionItemTitle>
-                                    <h2>Durante</h2>
-                                </AccordionItemTitle>
-                                <AccordionItemBody>
-                                    <div>
-                                        {prototyping.map((currentValue, index) => (
-                                            <ReactMarkdown key={index} source={currentValue}/>
-                                        ))}
-                                        <p>
-                                            <Link to={`/prototypes/${match.params.name}/recipes/prototyping`} className="button">+</Link>
-                                        </p>
-                                    </div>
-                                </AccordionItemBody>
-                            </AccordionItem>
-                            <AccordionItem>
-                                <AccordionItemTitle>
-                                    <h2>Después</h2>
-                                </AccordionItemTitle>
-                                <AccordionItemBody>
-                                    <div>
-                                        {future.map((currentValue, index) => (
-                                            <ReactMarkdown key={index} source={currentValue}/>
-                                        ))}
-                                        <p>
-                                            <Link to={`/prototypes/${match.params.name}/recipes/future`} className="button">+</Link>
-                                        </p>
-                                    </div>
-                                </AccordionItemBody>
-                            </AccordionItem>
-                        </Accordion>
-                    </div>
-                </div>
+                <RecipeItem header="Antes" isOpen>
+                    {departure.map((currentValue, index) => (
+                        <ReactMarkdown key={index} source={currentValue}/>
+                    ))}
+                    <p>
+                        <Link to={`/prototypes/${match.params.name}/recipes/departure`} className="btn btn-primary">+</Link>
+                    </p>
+                </RecipeItem>
+                <RecipeItem header="Durante">
+                    {prototyping.map((currentValue, index) => (
+                        <ReactMarkdown key={index} source={currentValue}/>
+                    ))}
+                    <p>
+                        <Link to={`/prototypes/${match.params.name}/recipes/prototyping`} className="btn btn-primary">+</Link>
+                    </p>
+                </RecipeItem>
+                <RecipeItem header="Después">
+                    {future.map((currentValue, index) => (
+                        <ReactMarkdown key={index} source={currentValue}/>
+                    ))}
+                    <p>
+                        <Link to={`/prototypes/${match.params.name}/recipes/future`} className="btn btn-primary">+</Link>
+                    </p>
+                </RecipeItem>
             </div>
         );
     }
