@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const PrototypeListItem = ({nick, logo, name}) => (
     <Link to={`/prototypes/${name}`}>
-        <figure>
+        <figure className="text-center">
             <img className="rounded-circle img-fluid" src={logo} alt={nick}/>
             <figcaption className="figure-caption text-center">{nick}</figcaption>
         </figure>

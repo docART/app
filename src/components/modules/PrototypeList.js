@@ -10,7 +10,7 @@ const PrototypeList = ({prototypes, match}) => (
         <Header match={match} />
         <Row>
             {Object.entries(prototypes).map((prototype, index) => (
-                <Col key={index} sm="3" xs="6">
+                <Col key={index} className="vcenter" lg="3" md="4" sm="6" xs="12">
                     <PrototypeListItem name={prototype[0]} {...prototype[1]} />
                 </Col>
             ))}

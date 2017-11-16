@@ -13,3 +13,7 @@ body {
 .btn-primary:hover {
   background-color: #53c6c6;
 }
+
+figure > img.img-fluid {
+  height: 200px;
+}
