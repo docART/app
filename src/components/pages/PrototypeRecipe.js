@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { connect } from 'react-redux';
+import { Card, CardBody, CardHeader, ListGroup, ListGroupItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Header from '../modules/Navbar';
 import RecipeItem from '../modules/RecipeItem';
@@ -66,17 +67,20 @@ class PrototypeRecipe extends Component {
                         {departureLinks[0]}
                     </p>
                 </RecipeItem>
-                <RecipeItem header="Durante">
-                    {prototyping.map((currentValue, index) => (
-                        <div key={index}>
-                            <ReactMarkdown source={currentValue}/>
-                            {prototypingLinks[index]}
-                        </div>
-                    ))}
-                    <p>
+                <Card>
+                    <CardHeader>Durante</CardHeader>
+                    <ListGroup className="list-group-flush">
+                        {prototyping.map((currentValue, index) => (
+                            <ListGroupItem key={index}>
+                                <ReactMarkdown source={currentValue}/>
+                                {prototypingLinks[index]}
+                            </ListGroupItem>
+                        ))}
+                    </ListGroup>
+                    <CardBody>
                         {prototypingLinks.pop()}
-                    </p>
-                </RecipeItem>
+                    </CardBody>
+                </Card>
                 <RecipeItem header="Después">
                     {future.map((currentValue, index) => (
                         <ReactMarkdown key={index} source={currentValue}/>
