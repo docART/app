@@ -10,27 +10,27 @@ let PrototypeWizardPage2 = (props) => {
     <Form onSubmit={ handleSubmit }>
         <FormGroup>
             <Label for="procedure">Procedimientos</Label>
-            <Field name="procedure" id="procedure" component={Input} type="textarea" placeholder="Procedimientos" required  />
+            <Field name="procedure" id="procedure" component="input" className="form-control" type="textarea" placeholder="Procedimientos" required  />
         </FormGroup>
         <FormGroup>
             <Label for="schedule">Cronograma</Label>
-            <Field name="schedule" id="schedule" component={Input} type="textarea" placeholder="Cronograma" required  />
+            <Field name="schedule" id="schedule" component="input" className="form-control" type="textarea" placeholder="Cronograma" required  />
         </FormGroup>
         <FormGroup>
             <Label for="requirements">Requerimientos</Label>
-            <Field name="requirements" id="requirements" component={Input} type="textarea" placeholder="Requerimientos" required  />
+            <Field name="requirements" id="requirements" component="input" className="form-control" type="textarea" placeholder="Requerimientos" required  />
         </FormGroup>
         <FormGroup>
             <Label for="references">Referencias</Label>
-            <Field name="references" id="references" component={Input} type="textarea" placeholder="Referencias" required  />
+            <Field name="references" id="references" component="input" className="form-control" type="textarea" placeholder="Referencias" required  />
         </FormGroup>
         <FormGroup>
             <Label for="logo">Logo</Label>
-            <Field name="logo" id="logo" component={Input} type="url" placeholder="Logo" required/>
+            <Field name="logo" id="logo" component="input" className="form-control" type="url" placeholder="Logo" required/>
         </FormGroup>
         <FormGroup>
             <Label for="video">Video</Label>
-            <Field name="video" id="video" component={Input} type="url" placeholder="Video" required/>
+            <Field name="video" id="video" component="input" className="form-control" type="url" placeholder="Video" required/>
         </FormGroup>
         <FormGroup>
             <Field component={Button} type="submit" disabled={isPosting}>Enviar</Field>

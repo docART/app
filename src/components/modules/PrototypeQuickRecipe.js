@@ -14,55 +14,55 @@ let PrototypeQuickRecipe = ({handleSubmit, match, isPosting}) => {
                     <Form onSubmit={ handleSubmit }>
                         <FormGroup>
                             <Label for="title">Título</Label>
-                            <Field name="title" id="title" component={Input} type="text" placeholder="Título" maxLength="256" required/>
+                            <Field name="title" id="title" component="input" className="form-control" type="text" placeholder="Título" maxLength="256" required/>
                         </FormGroup>
                         <FormGroup>
                             <Label for="nick">Apodo</Label>
-                            <Field name="nick" id="nick" component={Input} type="text" placeholder="Apodo" maxLength="256" required/>
+                            <Field name="nick" id="nick" component="input" className="form-control" type="text" placeholder="Apodo" maxLength="256" required/>
                         </FormGroup>
                         <FormGroup>
                             <Label for="summary">Resumen</Label>
-                            <Field name="summary" id="summary" component={Input} type="textarea" placeholder="Resumen" required  />
+                            <Field name="summary" id="summary" component="input" className="form-control" type="textarea" placeholder="Resumen" required  />
                         </FormGroup>
                         <FormGroup>
                             <Label for="motivations">Motivaciones</Label>
-                            <Field name="motivations" id="motivations" component={Input} type="textarea" placeholder="Motivaciones" required />
+                            <Field name="motivations" id="motivations" component="input" className="form-control" type="textarea" placeholder="Motivaciones" required />
                         </FormGroup>
                         <FormGroup>
                             <Label for="team">Equipo</Label>
-                            <Field name="team" component={Input} type="textarea" placeholder="Equipo"/>
+                            <Field name="team" component="input" className="form-control" type="textarea" placeholder="Equipo"/>
                         </FormGroup>
                         <FormGroup>
                             <Label for="promoter">Promotor</Label>
-                            <Field name="promoter" id="promoter" component={Input} type="text" placeholder="Promotor" maxLength="256" required />
+                            <Field name="promoter" id="promoter" component="input" className="form-control" type="text" placeholder="Promotor" maxLength="256" required />
                         </FormGroup>
                         <FormGroup>
                             <Label for="email">Email</Label>
-                            <Field name="email" id="email" component={Input} type="email" placeholder="Email" maxLength="256" required />
+                            <Field name="email" id="email" component="input" className="form-control" type="email" placeholder="Email" maxLength="256" required />
                         </FormGroup>
                         <FormGroup>
                             <Label for="procedure">Procedimientos</Label>
-                            <Field name="procedure" id="procedure" component={Input} type="textarea" placeholder="Procedimientos" required  />
+                            <Field name="procedure" id="procedure" component="input" className="form-control" type="textarea" placeholder="Procedimientos" required  />
                         </FormGroup>
                         <FormGroup>
                             <Label for="schedule">Cronograma</Label>
-                            <Field name="schedule" id="schedule" component={Input} type="textarea" placeholder="Cronograma" required  />
+                            <Field name="schedule" id="schedule" component="input" className="form-control" type="textarea" placeholder="Cronograma" required  />
                         </FormGroup>
                         <FormGroup>
                             <Label for="requirements">Requerimientos</Label>
-                            <Field name="requirements" id="requirements" component={Input} type="textarea" placeholder="Requerimientos" required  />
+                            <Field name="requirements" id="requirements" component="input" className="form-control" type="textarea" placeholder="Requerimientos" required  />
                         </FormGroup>
                         <FormGroup>
                             <Label for="references">Referencias</Label>
-                            <Field name="references" id="references" component={Input} type="textarea" placeholder="Referencias" required  />
+                            <Field name="references" id="references" component="input" className="form-control" type="textarea" placeholder="Referencias" required  />
                         </FormGroup>
                         <FormGroup>
                             <Label for="logo">Logo</Label>
-                            <Field name="logo" id="logo" component={Input} type="url" placeholder="Logo" required/>
+                            <Field name="logo" id="logo" component="input" className="form-control" type="url" placeholder="Logo" required/>
                         </FormGroup>
                         <FormGroup>
                             <Label for="video">Video</Label>
-                            <Field name="video" id="video" component={Input} type="url" placeholder="Video" required/>
+                            <Field name="video" id="video" component="input" className="form-control" type="url" placeholder="Video" required/>
                         </FormGroup>
                         <FormGroup>
                             <Field component={Button} type="submit" disabled={isPosting}>Update</Field>

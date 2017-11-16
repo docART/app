@@ -19,26 +19,26 @@ const NoteForm = (props) => {
             </p>
             <FormGroup>
                 <Label for="title">Título</Label>
-                <Field name="title" component={Input} type="text" placeholder="Título" maxLength="256" required/>
+                <Field name="title" component="input" className="form-control" type="text" placeholder="Título" maxLength="256" required/>
             </FormGroup>
             <FormGroup>
             <label for="image">Url de la imagen</label>
-            <Field name="image" id="image" component={Input} type="textarea" placeholder="Url de la imagen" required/>
+            <Field name="image" id="image" component="input" className="form-control" type="textarea" placeholder="Url de la imagen" required/>
             <Field for="image" component={ FormText }>¿Qué imagen quieres compartir?</Field>
             </FormGroup>
             <FormGroup>
                 <label for="imagesreferences">Referencias de la imagen</label>
-                <Field name="imagesreferences" id="imagesreferences" component={Input} type="textarea" placeholder="Referencias de la imagen" required/>
+                <Field name="imagesreferences" id="imagesreferences" component="input" className="form-control" type="textarea" placeholder="Referencias de la imagen" required/>
                 <Field for="imagesreferences" component={ FormText }>¿No olvides la referencia de la imagen?</Field>
             </FormGroup>
             <FormGroup>
                 <label for="other">Texto</label>
-                <Field name="other" id="other" component={Input} type="textarea" placeholder="Texto" required/>
+                <Field name="other" id="other" component="input" className="form-control" type="textarea" placeholder="Texto" required/>
                 <Field for="other" component={ FormText }>Como es una nota, también está compuesta de dos partes: un grafema y un texto explicativo.</Field>
             </FormGroup>
             <FormGroup>
                 <Label for="author">Autor/es</Label>
-                <Field name="author" component={Input} type="text" placeholder="Autor/es" maxLength="256" required/>
+                <Field name="author" component="input" className="form-control" type="text" placeholder="Autor/es" maxLength="256" required/>
             </FormGroup>
             <FormGroup>
                 <Field component={Button} type="submit">Guardar</Field>
