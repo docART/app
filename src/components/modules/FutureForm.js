@@ -18,43 +18,36 @@ const FutureForm = (props) => {
             Quizás lo más importante sea dedicar un tiempo para indicar desarrollos futuros, formas de uso, alianzas estratégicas,...
         </p>
         <FormGroup>
-            <label for="share">Compartir</label>
-            <Field name="share" id="share" component={Input} type="textarea" placeholder="Compartir" required/>
-            <Field for="share" component={ FormText }>¿Como se comparte el prototipo?</Field>
+            <Label for="share">Compartir</Label>
+            <Field name="share" id="share" component="textarea" className="form-control" placeholder="Compartir" required/>
+            <FormText>¿Como se comparte el prototipo?</FormText>
         </FormGroup>
         <FormGroup>
-            <label for="future_development">Desarrollo futuro</label>
-            <Field name="future_development" id="future_development" component={Input} type="textarea" placeholder="Desarrollo futuro" required/>
-            <Field for="future_development" component={ FormText }>¿Hay alguna estrategia para continuar?</Field>
+            <Label for="future_development">Desarrollo futuro</Label>
+            <Field name="future_development" id="future_development" component="textarea" className="form-control" placeholder="Desarrollo futuro" required/>
+            <FormText>¿Hay alguna estrategia para continuar?</FormText>
         </FormGroup>
         <FormGroup>
-            <label for="maintenance">Mantenimiento</label>
-            <Field name="maintenance" id="maintenance" component={Input} type="textarea" placeholder="Mantenimiento" required/>
-            <Field for="maintenance" component={ FormText }>¿Qué cosas hay que hacer para su mantenimiento?</Field>
+            <Label for="maintenance">Mantenimiento</Label>
+            <Field name="maintenance" id="maintenance" component="textarea" className="form-control" placeholder="Mantenimiento" required/>
+            <FormText>¿Qué cosas hay que hacer para su mantenimiento?</FormText>
         </FormGroup>
         <FormGroup>
-            <label for="references">Referencias</label>
-            <Field name="references" id="references" component={Input} type="textarea" placeholder="Referencias" required/>
-            <Field for="references" component={ FormText }>¿Qué referencias deberían tomar en cuenta los interesados?</Field>
+            <Label for="references">Referencias</Label>
+            <Field name="references" id="references" component="textarea" className="form-control" placeholder="Referencias" required/>
+            <FormText>¿Qué referencias deberían tomar en cuenta los interesados?</FormText>
         </FormGroup>
         <FormGroup>
-            <label for="image">Url de la imagen</label>
-            <Field name="image" id="image" component={Input} type="textarea" placeholder="Url de la imagen" required/>
-            <Field for="image" component={ FormText }>¿Qué imagen quieres compartir?</Field>
+            <Label for="image">Url de la imagen</Label>
+            <Field name="image" id="image" component="input" type="url" className="form-control" placeholder="Url de la imagen" required/>
+            <FormText>¿Qué imagen quieres compartir?</FormText>
         </FormGroup>
         <FormGroup>
-            <label for="image">Url de la imagen</label>
-            <Field name="image" id="image" component={Input} type="textarea" placeholder="Url de la imagen" required/>
-            <Field for="image" component={ FormText }>¿Qué imagen quieres compartir?</Field>
+            <Label for="imagesreferences">Referencias de la imagen</Label>
+            <Field name="imagesreferences" id="imagesreferences" component="textarea" className="form-control" placeholder="Referencias de la imagen" required/>
+            <FormText>¿No olvides la referencia de la imagen?</FormText>
         </FormGroup>
-        <FormGroup>
-            <label for="imagesreferences">Referencias de la imagen</label>
-            <Field name="imagesreferences" id="imagesreferences" component={Input} type="textarea" placeholder="Referencias de la imagen" required/>
-            <Field for="imagesreferences" component={ FormText }>¿No olvides la referencia de la imagen?</Field>
-        <FormGroup>
-        </FormGroup>
-            <Field component={Button} type="submit">Guardar</Field>
-        </FormGroup> 
+            <Button type="submit">Guardar</Button>
      </Form>
     );
 };

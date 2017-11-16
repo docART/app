@@ -16,15 +16,15 @@ let PrototypeWizardPage1 = (props) => {
         </FormGroup>
         <FormGroup>
             <Label for="summary">Resumen</Label>
-            <Field name="summary" id="summary" component="input" className="form-control" type="textarea" placeholder="Resumen" required  />
+            <Field name="summary" id="summary" component="textarea" className="form-control" placeholder="Resumen" required  />
         </FormGroup>
         <FormGroup>
             <Label for="motivations">Motivaciones</Label>
-            <Field name="motivations" id="motivations" component="input" className="form-control" type="textarea" placeholder="Motivaciones" required />
+            <Field name="motivations" id="motivations" component="textarea" className="form-control" placeholder="Motivaciones" required />
         </FormGroup>
         <FormGroup>
             <Label for="team">Equipo</Label>
-            <Field name="team" component="input" className="form-control" type="textarea" placeholder="Equipo"/>
+            <Field name="team" component="textarea" className="form-control" placeholder="Equipo"/>
         </FormGroup>
         <FormGroup>
             <Label for="promoter">Promotor</Label>
@@ -36,7 +36,7 @@ let PrototypeWizardPage1 = (props) => {
         </FormGroup>
         <FormGroup>
             <Label for="select">Select</Label>
-            <Field name="select" id="select" component="input" className="form-control" type="select" required>
+            <Field name="select" id="select" component="select" className="form-control" required>
             <option></option>
             <option>GNU Free Documentation License</option>
             <option>Creative Commons Zero v1.0 Universal</option>
@@ -44,9 +44,7 @@ let PrototypeWizardPage1 = (props) => {
             <option>Creative Commons Attribution Share Alike 4.0</option>
             </Field>
         </FormGroup>
-        <FormGroup>
-            <Field component={Button} type="submit">Siguiente</Field>
-        </FormGroup>
+            <Button type="submit">Siguiente</Button>
     </Form>
   );
 };

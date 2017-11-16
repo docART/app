@@ -22,27 +22,25 @@ const NoteForm = (props) => {
                 <Field name="title" component="input" className="form-control" type="text" placeholder="Título" maxLength="256" required/>
             </FormGroup>
             <FormGroup>
-            <label for="image">Url de la imagen</label>
-            <Field name="image" id="image" component="input" className="form-control" type="textarea" placeholder="Url de la imagen" required/>
-            <Field for="image" component={ FormText }>¿Qué imagen quieres compartir?</Field>
+            <Label for="image">Url de la imagen</Label>
+            <Field name="image" id="image" component="input" className="form-control" type="url" placeholder="Url de la imagen" required/>
+            <FormText>¿Qué imagen quieres compartir?</FormText>
             </FormGroup>
             <FormGroup>
-                <label for="imagesreferences">Referencias de la imagen</label>
-                <Field name="imagesreferences" id="imagesreferences" component="input" className="form-control" type="textarea" placeholder="Referencias de la imagen" required/>
-                <Field for="imagesreferences" component={ FormText }>¿No olvides la referencia de la imagen?</Field>
+                <Label for="imagesreferences">Referencias de la imagen</Label>
+                <Field name="imagesreferences" id="imagesreferences" component="textarea" className="form-control" placeholder="Referencias de la imagen" required/>
+                <FormText>¿No olvides la referencia de la imagen?</FormText>
             </FormGroup>
             <FormGroup>
-                <label for="other">Texto</label>
-                <Field name="other" id="other" component="input" className="form-control" type="textarea" placeholder="Texto" required/>
-                <Field for="other" component={ FormText }>Como es una nota, también está compuesta de dos partes: un grafema y un texto explicativo.</Field>
+                <Label for="other">Texto</Label>
+                <Field name="other" id="other" component="textarea" className="form-control" placeholder="Texto" required/>
+                <FormText>Como es una nota, también está compuesta de dos partes: un grafema y un texto explicativo.</FormText>
             </FormGroup>
             <FormGroup>
                 <Label for="author">Autor/es</Label>
                 <Field name="author" component="input" className="form-control" type="text" placeholder="Autor/es" maxLength="256" required/>
             </FormGroup>
-            <FormGroup>
-                <Field component={Button} type="submit">Guardar</Field>
-            </FormGroup> 
+                <Button type="submit">Guardar</Button>
         </Form>
     );
 };

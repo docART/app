@@ -22,15 +22,15 @@ let PrototypeQuickRecipe = ({handleSubmit, match, isPosting}) => {
                         </FormGroup>
                         <FormGroup>
                             <Label for="summary">Resumen</Label>
-                            <Field name="summary" id="summary" component="input" className="form-control" type="textarea" placeholder="Resumen" required  />
+                            <Field name="summary" id="summary" component="textarea" className="form-control" placeholder="Resumen" required  />
                         </FormGroup>
                         <FormGroup>
                             <Label for="motivations">Motivaciones</Label>
-                            <Field name="motivations" id="motivations" component="input" className="form-control" type="textarea" placeholder="Motivaciones" required />
+                            <Field name="motivations" id="motivations" component="textarea" className="form-control" placeholder="Motivaciones" required />
                         </FormGroup>
                         <FormGroup>
                             <Label for="team">Equipo</Label>
-                            <Field name="team" component="input" className="form-control" type="textarea" placeholder="Equipo"/>
+                            <Field name="team" component="textarea" className="form-control" placeholder="Equipo"/>
                         </FormGroup>
                         <FormGroup>
                             <Label for="promoter">Promotor</Label>
@@ -42,19 +42,19 @@ let PrototypeQuickRecipe = ({handleSubmit, match, isPosting}) => {
                         </FormGroup>
                         <FormGroup>
                             <Label for="procedure">Procedimientos</Label>
-                            <Field name="procedure" id="procedure" component="input" className="form-control" type="textarea" placeholder="Procedimientos" required  />
+                            <Field name="procedure" id="procedure" component="textarea" className="form-control" placeholder="Procedimientos" required  />
                         </FormGroup>
                         <FormGroup>
                             <Label for="schedule">Cronograma</Label>
-                            <Field name="schedule" id="schedule" component="input" className="form-control" type="textarea" placeholder="Cronograma" required  />
+                            <Field name="schedule" id="schedule" component="textarea" className="form-control" placeholder="Cronograma" required  />
                         </FormGroup>
                         <FormGroup>
                             <Label for="requirements">Requerimientos</Label>
-                            <Field name="requirements" id="requirements" component="input" className="form-control" type="textarea" placeholder="Requerimientos" required  />
+                            <Field name="requirements" id="requirements" component="textarea" className="form-control" placeholder="Requerimientos" required  />
                         </FormGroup>
                         <FormGroup>
                             <Label for="references">Referencias</Label>
-                            <Field name="references" id="references" component="input" className="form-control" type="textarea" placeholder="Referencias" required  />
+                            <Field name="references" id="references" component="textarea" className="form-control" placeholder="Referencias" required  />
                         </FormGroup>
                         <FormGroup>
                             <Label for="logo">Logo</Label>
@@ -64,9 +64,7 @@ let PrototypeQuickRecipe = ({handleSubmit, match, isPosting}) => {
                             <Label for="video">Video</Label>
                             <Field name="video" id="video" component="input" className="form-control" type="url" placeholder="Video" required/>
                         </FormGroup>
-                        <FormGroup>
-                            <Field component={Button} type="submit" disabled={isPosting}>Update</Field>
-                        </FormGroup>                    
+                        <Button type="submit" disabled={isPosting}>Update</Button>                   
                     </Form>
                 </div>
             </div>

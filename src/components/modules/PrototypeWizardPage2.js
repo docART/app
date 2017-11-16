@@ -10,19 +10,19 @@ let PrototypeWizardPage2 = (props) => {
     <Form onSubmit={ handleSubmit }>
         <FormGroup>
             <Label for="procedure">Procedimientos</Label>
-            <Field name="procedure" id="procedure" component="input" className="form-control" type="textarea" placeholder="Procedimientos" required  />
+            <Field name="procedure" id="procedure" component="textarea" className="form-control" placeholder="Procedimientos" required  />
         </FormGroup>
         <FormGroup>
             <Label for="schedule">Cronograma</Label>
-            <Field name="schedule" id="schedule" component="input" className="form-control" type="textarea" placeholder="Cronograma" required  />
+            <Field name="schedule" id="schedule" component="textarea" className="form-control" placeholder="Cronograma" required  />
         </FormGroup>
         <FormGroup>
             <Label for="requirements">Requerimientos</Label>
-            <Field name="requirements" id="requirements" component="input" className="form-control" type="textarea" placeholder="Requerimientos" required  />
+            <Field name="requirements" id="requirements" component="textarea" className="form-control" placeholder="Requerimientos" required  />
         </FormGroup>
         <FormGroup>
             <Label for="references">Referencias</Label>
-            <Field name="references" id="references" component="input" className="form-control" type="textarea" placeholder="Referencias" required  />
+            <Field name="references" id="references" component="textarea" className="form-control" placeholder="Referencias" required  />
         </FormGroup>
         <FormGroup>
             <Label for="logo">Logo</Label>
@@ -32,9 +32,7 @@ let PrototypeWizardPage2 = (props) => {
             <Label for="video">Video</Label>
             <Field name="video" id="video" component="input" className="form-control" type="url" placeholder="Video" required/>
         </FormGroup>
-        <FormGroup>
-            <Field component={Button} type="submit" disabled={isPosting}>Enviar</Field>
-        </FormGroup>
+            <Button type="submit" disabled={isPosting}>Enviar</Button>
     </Form>
   );
 };
