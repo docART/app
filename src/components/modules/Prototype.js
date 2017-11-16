@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Col } from 'reactstrap';
 import PropTypes from 'prop-types';
-import {Col} from 'reactstrap';
 
-const PrototypeListItem = ({nick, logo}) => (
-    <div>
-      <Col>
-        <img className="img-thumbnail rounded prototype-image" src={logo} alt={nick}/>
-        <h3 className="team-title">{nick}</h3>
-      </Col>
-    </div>
+const PrototypeListItem = ({nick, logo, key, name}) => (
+    <Link key={key} to={`/prototypes/${name}`}>
+        <figure>
+            <img className="rounded-circle img-fluid" src={logo} alt={nick}/>
+            <figcaption className="figure-caption text-center">{nick}</figcaption>
+        </figure>
+    </Link>
 );
 
 PrototypeListItem.propTypes = {

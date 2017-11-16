@@ -1,25 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {Container, Row} from 'reactstrap';
+import { Col, Container, Row } from 'reactstrap';
 import { PrototypeListItem } from './Prototype';
 import Header from './Navbar';
 
 const PrototypeList = ({prototypes, match}) => (
-  <div>
-  <Header match={match} />
-      <h2>Prototipos</h2>
-        <Container>
-          <Row>
+    <div>
+        <Header match={match} />
+        <Row>
             {Object.entries(prototypes).map((prototype, index) => (
-                <Link key={index} to={`/prototypes/${prototype[0]}`}>
-                <PrototypeListItem {...prototype[1]} />
-                </Link>
+                <Col sm="3" xs="6">
+                    <PrototypeListItem key={index} name={prototype[0]} {...prototype[1]} />
+                </Col>
             ))}
-          </Row>
-        </Container>
-  </div>
+        </Row>
+    </div>
 );
 
 PrototypeList.propTypes = {
