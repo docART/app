@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { saveDocumentRequested } from '../../actions';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, FormText } from 'reactstrap';
 
 const DepartureForm = (props) => {
     const { handleSubmit } = props;
@@ -62,7 +62,7 @@ const DepartureForm = (props) => {
                 <Field name="imagesreferences" id="imagesreferences" component="textarea" className="form-control" placeholder="Referencias de la imagen" required/>
                 <FormText>¿No olvides la referencia de la imagen?</FormText>
             </FormGroup>
-                <Button type="submit">Update</Button> 
+            <Button type="submit">Guardar</Button>
         </Form>
     );
 };
@@ -72,7 +72,7 @@ const mapStateToProps = (state, ownProps) => ({
         prototype: ownProps.prototype,
         section: ownProps.section,
         path: ownProps.path,
-        content: state.documents[ownProps.prototype][ownProps.path]
+        ...state.documents[ownProps.prototype].items[ownProps.path]
     }
 });
 
