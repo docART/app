@@ -58,10 +58,11 @@ export function* fetchDocuments(action) {
 
 export function* saveDocument(action) {
     const repo = gh.getRepo('docART', action.prototype);
-    const message = 'Update ' + action.values.section;
+    const { prototype, section, path, ...content } = action.values;
+    const message = 'Update ' + section;
 
     try {
-        yield call([repo, repo.writeFile], 'recipe', action.values.path, JSON.stringify(action.values), message, {});
+        yield call([repo, repo.writeFile], 'recipe', path, JSON.stringify(content), message, {});
         yield put({type: 'SAVE_DOCUMENT_SUCCEEDED', prototype: action.prototype});
         yield put(push('/prototypes/' + action.prototype + '/long'));
     } catch (e) {
