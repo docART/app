@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { saveDocumentRequested } from '../../actions';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, FormText } from 'reactstrap';
 
 const NoteForm = (props) => {
     const { handleSubmit } = props;
@@ -40,7 +40,7 @@ const NoteForm = (props) => {
                 <Label for="author">Autor/es</Label>
                 <Field name="author" component="input" className="form-control" type="text" placeholder="Autor/es" maxLength="256" required/>
             </FormGroup>
-                <Button type="submit" color="primary">Guardar</Button>
+            <Button type="submit" color="primary">Guardar</Button>
         </Form>
     );
 };
@@ -48,8 +48,9 @@ const NoteForm = (props) => {
 const mapStateToProps = (state, ownProps) => ({
     initialValues: {
         prototype: ownProps.prototype,
+        section: ownProps.section,
         path: ownProps.path,
-        content: state.documents[ownProps.prototype][ownProps.path]
+        ...state.documents[ownProps.prototype].items[ownProps.path]
     }
 });
 
