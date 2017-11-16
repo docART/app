@@ -8,6 +8,7 @@ const InsightForm = (props) => {
     const { handleSubmit } = props;
     return (
         <Form onSubmit={ handleSubmit }>
+            <h1>Hito</h1>
             <Field name="prototype" component="input" type="hidden"/>
             <Field name="path" component="input" type="hidden"/>
             <p>
@@ -50,7 +51,9 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 export default connect(mapStateToProps)(reduxForm({
-    form: 'insight',
+    form: 'note insight',
+    destroyOnUnmount: false,
+    forceUnregisterOnUnmount: true,
     onSubmit: (values, dispatch) => {
         dispatch(saveDocumentRequested(values.prototype, values));
     }
