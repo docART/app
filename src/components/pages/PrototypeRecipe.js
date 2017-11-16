@@ -33,13 +33,11 @@ class PrototypeRecipe extends Component {
                         departureLinks.push(<Link to={`/prototypes/${match.params.name}/recipes/${currentValue[0]}`} className="btn btn-primary">Editar</Link>);
                     } else if (currentValue[0].startsWith('prototyping')) {
                         let markdown = Object.entries(currentValue[1]).map(toMarkdown).join('\n');
-                        departure.push(markdown);
-                        prototyping.push(currentValue[1]);
+                        prototyping.push(markdown);
                         prototypingLinks.push(<Link to={`/prototypes/${match.params.name}/recipes/${currentValue[0]}`} className="btn btn-primary">Editar</Link>);
                     } else if (currentValue[0].startsWith('future')) {
                         let markdown = Object.entries(currentValue[1]).map(toMarkdown).join('\n');
-                        departure.push(markdown);
-                        future.push(currentValue[1]);
+                        future.push(markdown);
                         futureLinks.push(<Link to={`/prototypes/${match.params.name}/recipes/${currentValue[0]}`} className="btn btn-primary">Editar</Link>);
                     }
                 }
@@ -70,8 +68,10 @@ class PrototypeRecipe extends Component {
                 </RecipeItem>
                 <RecipeItem header="Durante">
                     {prototyping.map((currentValue, index) => (
-                        <ReactMarkdown key={index} source={currentValue}/>,
-                        prototypingLinks[index]
+                        <div key={index}>
+                            <ReactMarkdown source={currentValue}/>
+                            {prototypingLinks[index]}
+                        </div>
                     ))}
                     <p>
                         {prototypingLinks.pop()}
