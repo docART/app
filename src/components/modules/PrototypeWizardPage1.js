@@ -44,7 +44,7 @@ let PrototypeWizardPage1 = (props) => {
             <option>Creative Commons Attribution Share Alike 4.0</option>
             </Field>
         </FormGroup>
-            <Button type="submit">Siguiente</Button>
+            <Button type="submit" color="primary">Siguiente</Button>
     </Form>
   );
 };

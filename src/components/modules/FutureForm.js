@@ -47,7 +47,7 @@ const FutureForm = (props) => {
             <Field name="imagesreferences" id="imagesreferences" component="textarea" className="form-control" placeholder="Referencias de la imagen" required/>
             <FormText>¿No olvides la referencia de la imagen?</FormText>
         </FormGroup>
-            <Button type="submit">Guardar</Button>
+            <Button type="submit" color="primary">Guardar</Button>
      </Form>
     );
 };

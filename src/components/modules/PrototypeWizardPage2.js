@@ -32,7 +32,7 @@ let PrototypeWizardPage2 = (props) => {
             <Label for="video">Video</Label>
             <Field name="video" id="video" component="input" className="form-control" type="url" placeholder="Video" required/>
         </FormGroup>
-            <Button type="submit" disabled={isPosting}>Enviar</Button>
+            <Button type="submit" color="primary" disabled={isPosting}>Enviar</Button>
     </Form>
   );
 };

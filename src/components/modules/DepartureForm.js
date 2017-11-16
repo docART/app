@@ -62,7 +62,7 @@ const DepartureForm = (props) => {
                 <Field name="imagesreferences" id="imagesreferences" component="textarea" className="form-control" placeholder="Referencias de la imagen" required/>
                 <FormText>¿No olvides la referencia de la imagen?</FormText>
             </FormGroup>
-                <Button type="submit">Update</Button> 
+                <Button type="submit" color="primary">Update</Button>
         </Form>
     );
 };

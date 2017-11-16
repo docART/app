@@ -40,7 +40,7 @@ const NoteForm = (props) => {
                 <Label for="author">Autor/es</Label>
                 <Field name="author" component="input" className="form-control" type="text" placeholder="Autor/es" maxLength="256" required/>
             </FormGroup>
-                <Button type="submit">Guardar</Button>
+                <Button type="submit" color="primary">Guardar</Button>
         </Form>
     );
 };

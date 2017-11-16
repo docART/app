@@ -4,3 +4,12 @@ body {
   padding-top: 56px;
   margin-top: calc(56px + 1rem);
 }
+
+.btn-primary {
+  background-color: #66cccc;
+  border-color: #39acac;
+}
+
+.btn-primary:hover {
+  background-color: #53c6c6;
+}
