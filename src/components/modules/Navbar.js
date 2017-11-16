@@ -37,15 +37,15 @@ class Header extends React.Component {
     }
     return (
         <Navbar className="bg-light" fixed="top" light color="faded" expand="md">
-          <div className="container">
-          <NavbarBrand href="/">docART</NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <Collapse isOpen={this.state.collapsed} navbar>
-            <Nav className="ml-auto" navbar>
-              {links}
-            </Nav>
-          </Collapse>
-          </div>
+            <div className="container">
+                <NavbarBrand href="/">docART</NavbarBrand>
+                <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+                <Collapse isOpen={this.state.collapsed} navbar>
+                    <Nav className="ml-auto" navbar>
+                        {links}
+                    </Nav>
+                </Collapse>
+            </div>
         </Navbar>
     );
   }
