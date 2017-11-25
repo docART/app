@@ -1,6 +1,5 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
-import Header from '../modules/Navbar';
 import NoteForm from '../modules/NoteForm';
 import InsightForm from '../modules/InsightForm';
 
