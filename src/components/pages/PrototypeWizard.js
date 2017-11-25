@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import Header from '../modules/Navbar';
+import Header from '../modules/Header';
 import PrototypeWizardPage1 from '../modules/PrototypeWizardPage1';
 import PrototypeWizardPage2 from '../modules/PrototypeWizardPage2';
 

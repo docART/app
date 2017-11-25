@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import Header from './Navbar';
+import Header from './Header';
 import { updatePrototypeRequested } from '../../actions';
 import { Button, Form, FormGroup, Label, FormText } from 'reactstrap';
 

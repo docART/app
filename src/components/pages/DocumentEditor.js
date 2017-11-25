@@ -1,6 +1,6 @@
 import React from 'react';
 import uuid from 'uuid/v1';
-import Header from '../modules/Navbar';
+import Header from '../modules/Header';
 import DepartureForm from '../modules/DepartureForm';
 import SlowWizard from './SlowWizard';
 import FutureForm from '../modules/FutureForm';
