@@ -59,7 +59,13 @@ export function* fetchDocuments(action) {
 export function* saveDocument(action) {
     const repo = gh.getRepo('docART', action.prototype);
     const { prototype, section, path, ...content } = action.values;
-    const message = 'Update ' + section;
+    var message;
+
+    if (action.values.insight) {
+        message = action.values.insight.title + '\n\n' + action.values.insight.other;
+    } else {
+        message = 'Update ' + section;
+    }
 
     try {
         yield call([repo, repo.writeFile], 'recipe', path, JSON.stringify(content), message, {});

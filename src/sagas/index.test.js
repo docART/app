@@ -38,7 +38,7 @@ describe('sagas', () => {
         const repo = gh.getRepo('docART', prototype);
         const generator = saveDocument({prototype, values});
 
-        expect(generator.next().value).toEqual(call([repo, repo.writeFile], 'recipe', values.path, JSON.stringify(values), 'Update departure', {}));
+        expect(generator.next().value).toEqual(call([repo, repo.writeFile], 'recipe', values.path, JSON.stringify({}), 'Update departure', {}));
         expect(generator.next().value).toEqual(put({type: 'SAVE_DOCUMENT_SUCCEEDED', prototype}));
         expect(generator.next().value).toEqual(put(push('/prototypes/test/long')));
     });

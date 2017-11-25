@@ -38,10 +38,6 @@ const NoteForm = (props) => {
                 <FormText>Como es una nota, también está compuesta de dos partes: un grafema y un texto explicativo.</FormText>
             </FormGroup>
             <FormGroup>
-                <Label for="author">Autor/es</Label>
-                <Field name="author" component="input" className="form-control" type="text" placeholder="Autor/es" maxLength="256" required/>
-            </FormGroup>
-            <FormGroup>
                 <Label className="form-check-label" check>
                 <Field name="insight" id="insight" component="input" type="checkbox" className="form-check-input" />{' '}
                 Añadir Hito
@@ -62,7 +58,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 export default connect(mapStateToProps)(reduxForm({
-    form: 'note insight',
+    form: 'note',
     destroyOnUnmount: false,
     forceUnregisterOnUnmount: true,
     onSubmit: (values, dispatch) => {
