@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { connect } from 'react-redux';
-import { CardBody, ListGroup, ListGroupItem } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import {connect} from 'react-redux';
+import {CardBody, ListGroup, ListGroupItem} from 'reactstrap';
+import {Link} from 'react-router-dom';
 import Header from '../modules/Header';
 import RecipeItem from '../modules/RecipeItem';
-import { fetchDocumentsRequested } from '../../actions';
+import {fetchDocumentsRequested} from '../../actions';
 
 class PrototypeRecipe extends Component {
 
@@ -121,5 +121,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
     mapStateToProps,
-    { fetchDocumentsRequested }
+    {fetchDocumentsRequested}
 )(PrototypeRecipe);

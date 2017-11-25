@@ -1,5 +1,5 @@
-import { push } from 'react-router-redux';
-import { all, call, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import {push} from 'react-router-redux';
+import {all, call, put, takeEvery, takeLatest} from 'redux-saga/effects';
 import GitHub from 'github-api';
 
 const gh = new GitHub({token: process.env.REACT_APP_GITHUB_TOKEN});
@@ -58,7 +58,7 @@ export function* fetchDocuments(action) {
 
 export function* saveDocument(action) {
     const repo = gh.getRepo('docART', action.prototype);
-    const { prototype, section, path, ...content } = action.values;
+    const {prototype, section, path, ...content} = action.values;
     var message;
 
     if (action.values.insight) {
