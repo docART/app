@@ -23,11 +23,7 @@ const DocumentEditor = ({match}) => {
     return (
         <div>
             <Header match={match} />
-            <div className="section form">
-                <div className="w-container">
-                    {form}
-                </div>
-            </div>
+            {form}
         </div>
     );
 };

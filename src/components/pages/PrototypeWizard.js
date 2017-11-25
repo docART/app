@@ -28,17 +28,13 @@ class PrototypeWizard extends Component {
         return (
             <div>
                 <Header match={this.props.match}/>
-                <div className="form section">
-                    <div className="w-container">
-                        {page === 1 && <PrototypeWizardPage1 onSubmit={this.nextPage} />}
-                        {page === 2 && (
-                        <PrototypeWizardPage2
-                            previousPage={this.previousPage}
-                            onSubmit={onSubmit}
-                        />
-                        )}
-                    </div>
-                </div>
+                {page === 1 && <PrototypeWizardPage1 onSubmit={this.nextPage} />}
+                {page === 2 && (
+                <PrototypeWizardPage2
+                    previousPage={this.previousPage}
+                    onSubmit={onSubmit}
+                />
+                )}
             </div>
         );
     }
