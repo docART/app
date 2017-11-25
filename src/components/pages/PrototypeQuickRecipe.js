@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Button, Form, FormGroup, Label} from 'reactstrap';
 import {Field, reduxForm} from 'redux-form';
-import Header from './Header';
+import Header from '../modules/Header';
 import {updatePrototypeRequested} from '../../actions';
 
 let PrototypeQuickRecipe = ({handleSubmit, match, isPosting}) => {
@@ -78,5 +78,5 @@ export default connect(mapStateToProps)(reduxForm({
     form: 'edit prototype',
     onSubmit: (values, dispatch) => {
         dispatch(updatePrototypeRequested(values));
-      }
+    }
 })(PrototypeQuickRecipe));

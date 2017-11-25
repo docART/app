@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {connect} from 'react-redux';
 import {Col, Row} from 'reactstrap';
-import {PrototypeListItem} from './Prototype';
-import Header from './Header';
+import {PrototypeListItem} from '../modules/Prototype';
+import Header from '../modules/Header';
 
 const PrototypeList = ({prototypes, match}) => (
     <div>
