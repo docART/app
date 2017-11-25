@@ -49,7 +49,7 @@ class Header extends Component {
                 );
                 links.push(
                     <NavItem key="insights">
-                        <NavLink exact to={`/prototypes/${match.params.name}/insights`} className="nav-link">Mapade aprendizaje</NavLink>
+                        <NavLink exact to={`/prototypes/${match.params.name}/insights`} className="nav-link">Mapa de aprendizaje</NavLink>
                     </NavItem>
                 );
                 break;
