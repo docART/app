@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import NoteForm from '../modules/NoteForm';
-import InsightForm from '../modules/InsightForm';
+import NoteForm from './NoteForm';
+import InsightForm from './InsightForm';
 
 class SlowWizard extends Component {
 

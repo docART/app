@@ -2,7 +2,7 @@ import React from 'react';
 import uuid from 'uuid/v1';
 import Header from '../modules/Header';
 import DepartureForm from '../modules/DepartureForm';
-import SlowWizard from './SlowWizard';
+import SlowWizard from '../modules/SlowWizard';
 import FutureForm from '../modules/FutureForm';
 
 const DocumentEditor = ({match}) => {
