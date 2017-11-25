@@ -1,25 +1,21 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
-import { saveDocumentRequested } from '../../actions';
-import { Button, Form, FormGroup, Label, FormText } from 'reactstrap';
+import {connect } from 'react-redux';
+import {Button, Form, FormGroup, Label, FormText } from 'reactstrap';
+import {Field, reduxForm} from 'redux-form';
+import {saveDocumentRequested} from '../../actions';
 
 const InsightForm = (props) => {
-    const { handleSubmit } = props;
+    const {handleSubmit} = props;
     return (
-        <Form onSubmit={ handleSubmit }>
+        <Form onSubmit={handleSubmit}>
             <h1>Hito</h1>
-            <Field name="prototype" component="input" type="hidden"/>
-            <Field name="path" component="input" type="hidden"/>
-            <p>
-            </p>
             <FormGroup>
                 <Label for="title">Título</Label>
                 <Field name="title" component="input" className="form-control" type="text" placeholder="Título" maxLength="256" required/>
             </FormGroup>
             <FormGroup>
-            <Label for="image">Url de la imagen</Label>
-            <Field name="image" id="image" component="input" className="form-control" type="url" placeholder="Url de la imagen" required/>
+                <Label for="image">Url de la imagen</Label>
+                <Field name="image" id="image" component="input" className="form-control" type="url" placeholder="Url de la imagen" required/>
             <FormText>¿Qué imagen quieres compartir?</FormText>
             </FormGroup>
             <FormGroup>

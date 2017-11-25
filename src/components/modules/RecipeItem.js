@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Card, CardBody, CardHeader, Collapse  } from 'reactstrap';
+import React, {Component} from 'react';
+import {Card, CardHeader, Collapse} from 'reactstrap';
 
 class RecipeItem extends Component {
 

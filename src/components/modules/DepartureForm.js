@@ -1,13 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
-import { saveDocumentRequested } from '../../actions';
-import { Button, Form, FormGroup, Label, FormText } from 'reactstrap';
+import {connect} from 'react-redux';
+import {Button, Form, FormGroup, Label, FormText } from 'reactstrap';
+import {Field, reduxForm} from 'redux-form';
+import {saveDocumentRequested} from '../../actions';
 
 const DepartureForm = (props) => {
-    const { handleSubmit } = props;
+    const {handleSubmit} = props;
     return (
-        <Form onSubmit={ handleSubmit }>
+        <Form onSubmit={handleSubmit}>
             <Field name="prototype" component="input" type="hidden"/>
             <Field name="section" component="input" type="hidden"/>
             <Field name="path" component="input" type="hidden"/>

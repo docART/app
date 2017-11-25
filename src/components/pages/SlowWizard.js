@@ -1,5 +1,5 @@
-import React, { Component} from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import NoteForm from '../modules/NoteForm';
 import InsightForm from '../modules/InsightForm';
 
@@ -27,22 +27,23 @@ class SlowWizard extends Component {
         const {page} = this.state;
         return (
             <div>
-              {page === 1 && <NoteForm prototype={prototype} section={section} path={path} onSubmit={this.props.isToggled ? this.nextPage : onSubmit} />}
-              {page === 2 && (
-              <InsightForm prototype={prototype} section={section} path={path}
-                previousPage={this.previousPage}
-                onSubmit={onSubmit}
-                />
-              )}
+                {page === 1 && <NoteForm prototype={prototype} section={section} path={path} onSubmit={this.props.isToggled ? this.nextPage : onSubmit} />}
+                {page === 2 && (
+                    <InsightForm prototype={prototype} section={section} path={path}
+                        previousPage={this.previousPage}
+                        onSubmit={onSubmit}
+                    />
+                )}
             </div>
         );
     }
 }
+
 const mapStateToProps = (state) => {
     if (state.form.note) {
-      return {isToggled: state.form.note.values.insight};
+        return {isToggled: state.form.note.values.insight};
     } else {
-      return {};
+        return {isToggled: false};
     }
 };
 
