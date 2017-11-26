@@ -79,3 +79,20 @@ export const saveDocumentFailed = (prototype, message) => ({
     prototype,
     message
 });
+
+export const fetchInsightsRequested = (prototype) => ({
+    type: 'FETCH_INSIGHTS_REQUESTED',
+    prototype
+});
+
+export const fetchInsightsSucceeded = (prototype, insights) => ({
+    type: 'FETCH_INSIGHTS_SUCCEEDED',
+    prototype,
+    insights
+});
+
+export const fetchInsightsFailed = (prototype, message) => ({
+    type: 'FETCH_INSIGHTS_FAILED',
+    prototype,
+    message
+});

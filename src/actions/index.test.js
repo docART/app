@@ -116,4 +116,35 @@ describe('actions', () => {
         };
         expect(actions.saveDocumentFailed(prototype, message)).toEqual(expectedAction);
     });
+
+    it('should create action of type FETCH_INSIGHTS_REQUESTED', () => {
+        const prototype = 'test';
+        const expectedAction = {
+            type: 'FETCH_INSIGHTS_REQUESTED',
+            prototype,
+        };
+        expect(actions.fetchInsightsRequested(prototype)).toEqual(expectedAction);
+    });
+
+    it('should create action of type FETCH_INSIGHTS_SUCCEEDED', () => {
+        const prototype = 'test';
+        const insights = [];
+        const expectedAction = {
+            type: 'FETCH_INSIGHTS_SUCCEEDED',
+            prototype,
+            insights
+        };
+        expect(actions.fetchInsightsSucceeded(prototype, insights)).toEqual(expectedAction);
+    });
+
+    it('should create action of type FETCH_INSIGHTS_FAILED', () => {
+        const prototype = 'test';
+        const message = 'failure';
+        const expectedAction = {
+            type: 'FETCH_INSIGHTS_FAILED',
+            prototype,
+            message
+        };
+        expect(actions.fetchInsightsFailed(prototype, message)).toEqual(expectedAction);
+    });
 });
