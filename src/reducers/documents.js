@@ -36,7 +36,7 @@ function documents(state = initialState, action) {
     }
 }
 
-export default function documentsByProtoype(state = {}, action) {
+export default function documentsByPrototype(state = {}, action) {
     switch (action.type) {
         case 'FETCH_DOCUMENTS_REQUESTED':
         case 'FETCH_DOCUMENTS_SUCCEEDED':
