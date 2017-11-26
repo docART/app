@@ -1,14 +1,14 @@
 import GitHub from 'github-api';
 import { push } from 'react-router-redux';
 import { all, call, put } from 'redux-saga/effects';
-import { createPrototype, fetchDocuments, saveDocument, listPrototypes } from '.';
+import * as sagas from '.';
 
 describe('sagas', () => {
     const gh = new GitHub({token: process.env.REACT_APP_GITHUB_TOKEN});
     const org = gh.getOrganization('docART');
 
     it('should list prototypes', () => {
-        const generator = listPrototypes();
+        const generator = sagas.listPrototypes();
         const items = [];
 
         expect(generator.next().value).toEqual(call([org, org.getRepos]));
@@ -19,7 +19,7 @@ describe('sagas', () => {
     it ('should fetch documents', () => {
         const prototype = 'test';
         const repo = gh.getRepo('docART', prototype);
-        const generator = fetchDocuments({prototype});
+        const generator = sagas.fetchDocuments({prototype});
         const documents = {};
 
         expect(generator.next().value).toEqual(all([
@@ -32,11 +32,11 @@ describe('sagas', () => {
         expect(generator.next([]).value).toEqual(put({type: 'FETCH_DOCUMENTS_SUCCEEDED', prototype, documents}));
     });
 
-    it ('should save document', () => {
+    it('should save document', () => {
         const prototype = 'test';
         const values = {section: 'departure', path: 'test.json'};
         const repo = gh.getRepo('docART', prototype);
-        const generator = saveDocument({prototype, values});
+        const generator = sagas.saveDocument({prototype, values});
 
         expect(generator.next().value).toEqual(call([repo, repo.writeFile], 'recipe', values.path, JSON.stringify({}), 'Update departure', {}));
         expect(generator.next().value).toEqual(put({type: 'SAVE_DOCUMENT_SUCCEEDED', prototype}));
@@ -62,7 +62,7 @@ describe('sagas', () => {
                 video: '',
             }
         };
-        const generator = createPrototype(action);
+        const generator = sagas.createPrototype(action);
         const payload = {
             name: action.values.nick,
             description: action.values.title,
