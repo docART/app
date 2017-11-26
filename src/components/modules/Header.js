@@ -36,6 +36,7 @@ class Header extends Component {
                 break;
             case '/prototypes/:name':
             case '/prototypes/:name/long':
+            case '/prototypes/:name/insights':
             case '/prototypes/:name/recipes/:section/:file?':
                 links.push(
                     <NavItem key="quick">

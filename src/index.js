@@ -10,6 +10,7 @@ import { listPrototypesRequested } from './actions';
 import DocumentEditor from './components/pages/DocumentEditor';
 import PrototypeWizard from './components/pages/PrototypeWizard';
 import PrototypeRecipe from './components/pages/PrototypeRecipe';
+import PrototypeInsights from './components/pages/PrototypeInsights';
 import PrototypeList from './components/pages/PrototypeList';
 import PrototypeQuickRecipe from './components/pages/PrototypeQuickRecipe';
 import Footer from './components/modules/Footer';
@@ -33,6 +34,7 @@ render(
                 <Route exact path="/" component={PrototypeList}/>
                 <Route exact path="/prototypes/:name" component={PrototypeQuickRecipe}/>
                 <Route exact path="/prototypes/:name/long" component={PrototypeRecipe}/>
+                <Route exact path="/prototypes/:name/insights" component={PrototypeInsights} />
                 <Route exact path="/prototypes/:name/recipes/:section/:file?" component={DocumentEditor} />
                 <Route exact path="/prototype/form" component={PrototypeWizard}/>
                 <Footer/>
