@@ -1,12 +1,7 @@
 import {push} from 'react-router-redux';
 import {all, call, put, takeEvery, takeLatest} from 'redux-saga/effects';
 import GitHub from 'github-api';
-import {
-    createPrototypeFailed, createPrototypeSucceeded,
-    fetchDocumentsFailed, fetchDocumentsSucceeded,
-    listPrototypesFailed, listPrototypesSucceeded,
-    saveDocumentFailed, saveDocumentSucceeded
-} from '../actions';
+import * as actions from '../actions';
 
 const gh = new GitHub({token: process.env.REACT_APP_GITHUB_TOKEN});
 const org = gh.getOrganization('docART');
@@ -25,9 +20,9 @@ export function* listPrototypes() {
         items.forEach((currentValue, index) => {
             prototypes[currentValue.name] = responses[index].data;
         });
-        yield put(listPrototypesSucceeded(prototypes));
+        yield put(actions.listPrototypesSucceeded(prototypes));
     } catch (e) {
-        yield put(listPrototypesFailed(e.message));
+        yield put(actions.listPrototypesFailed(e.message));
     }
 }
 
@@ -55,10 +50,10 @@ export function* fetchDocuments(action) {
         contents.forEach((currentValue) => {
             documents[currentValue.config.url.substr(start)] = currentValue.data;
         });
-        yield put(fetchDocumentsSucceeded(action.prototype, documents));
+        yield put(actions.fetchDocumentsSucceeded(action.prototype, documents));
     }
     catch (e) {
-        yield put(fetchDocumentsFailed(action.prototype, e.message));
+        yield put(actions.fetchDocumentsFailed(action.prototype, e.message));
     }
 }
 
@@ -75,10 +70,10 @@ export function* saveDocument(action) {
 
     try {
         yield call([repo, repo.writeFile], 'recipe', path, JSON.stringify(content), message, {});
-        yield put(saveDocumentSucceeded(action.prototype));
+        yield put(actions.saveDocumentSucceeded(action.prototype));
         yield put(push('/prototypes/' + action.prototype + '/long'));
     } catch (e) {
-        yield put(saveDocumentFailed(action.prototype, e.message));
+        yield put(actions.saveDocumentFailed(action.prototype, e.message));
     }
 }
 
@@ -115,10 +110,10 @@ export function* createPrototype(action) {
         yield call([repo, repo.writeFile], 'recipe', 'departure/README.md', '# Antes', 'Create README.md for departure', {});
         yield call([repo, repo.writeFile], 'recipe', 'prototyping/README.md', '# Durante', 'Create README.md for prototyping', {});
         yield call([repo, repo.writeFile], 'recipe', 'future/README.md', '# Despues', 'Create README.md for future', {});
-        yield put(createPrototypeSucceeded(prototype.data.full_name, action.values));
+        yield put(actions.createPrototypeSucceeded(prototype.data.full_name, action.values));
         yield put(push('/'));
     } catch (e) {
-        yield put(createPrototypeFailed(e.message));
+        yield put(actions.createPrototypeFailed(e.message));
     }
 }
 
