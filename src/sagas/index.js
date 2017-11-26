@@ -77,6 +77,18 @@ export function* saveDocument(action) {
     }
 }
 
+export function* fetchInsights(action) {
+    const repo = gh.getRepo('docART', action.prototype);
+
+    try {
+        const response = yield call([repo, repo.listCommits], {sha: 'recipe'});
+        yield put(actions.fetchInsightsSucceeded(action.prototype, response.data));
+    }
+    catch (e) {
+        yield put(actions.fetchInsightsFailed(action.prototype, e.message));
+    }
+}
+
 export function* createPrototype(action) {
     try {
         const payload = {
@@ -122,6 +134,7 @@ export default function* rootSaga() {
         takeLatest('CREATE_PROTOTYPE_REQUESTED', createPrototype),
         takeEvery('LIST_PROTOTYPES_REQUESTED', listPrototypes),
         takeEvery('FETCH_DOCUMENTS_REQUESTED', fetchDocuments),
-        takeEvery('SAVE_DOCUMENT_REQUESTED', saveDocument)
+        takeEvery('SAVE_DOCUMENT_REQUESTED', saveDocument),
+        takeEvery('FETCH_INSIGHTS_REQUESTED', fetchInsights)
     ]);
 }

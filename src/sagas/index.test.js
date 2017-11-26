@@ -43,6 +43,16 @@ describe('sagas', () => {
         expect(generator.next().value).toEqual(put(push('/prototypes/test/long')));
     });
 
+    it ('should fetch insights', () => {
+        const prototype = 'test';
+        const repo = gh.getRepo('docART', prototype);
+        const generator = sagas.fetchInsights({prototype});
+        const insights = [];
+
+        expect(generator.next().value).toEqual(call([repo, repo.listCommits], {sha: 'recipe'}));
+        expect(generator.next({data: insights}).value).toEqual(put({type: 'FETCH_INSIGHTS_SUCCEEDED', prototype, insights}));
+    });
+
     it('should create prototype', () => {
         const action = {
             values: {
