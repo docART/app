@@ -1,23 +1,58 @@
 /** custom CSS **/
 
 body {
-  padding-top: 56px;
-  margin-top: 2rem;
+    padding-top: 56px;
+    margin-top: 2rem;
 }
 
 h1 {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .btn-primary {
-  background-color: #66cccc;
-  border-color: #39acac;
+    background-color: #66cccc;
+    border-color: #39acac;
 }
 
 .btn-primary:hover {
-  background-color: #53c6c6;
+    background-color: #53c6c6;
 }
 
 figure > img.img-fluid {
-  height: 200px;
+    height: 200px;
+}
+
+.insight {
+    padding: 3em 2em 2em;
+    position: relative;
+    color: rgba(0, 0, 0, .7);
+    border-left: 2px solid #53c6c6;
+}
+
+.insight::before {
+     content: attr(data-is);
+     position: absolute;
+     left: 2em;
+     font-weight: bold;
+     top: 1em;
+     display: block;
+     font-weight: 700;
+     font-size: .785rem;
+}
+
+.insight::after {
+     width: 10px;
+     height: 10px;
+     display: block;
+     top: 1em;
+     position: absolute;
+     left: -6px;
+     border-radius: 10px;
+     content: '';
+     border: 2px solid #53c6c6;
+     background: white;
+ }
+
+.insight:last-child {
+    border-image: linear-gradient(to bottom, #53c6c6 60%, rgba(83, 198, 198, 0.3)) 1 100%;
 }

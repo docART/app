@@ -15,22 +15,31 @@ class PrototypeInsights extends Component {
         let items = [];
 
         if (insights[match.params.name]) {
-            items = insights[match.params.name].items.filter(
-                item => item.commit.message.indexOf('\n') > -1
-            );
+            items = insights[match.params.name].items
+                .filter(item => item.commit.message.indexOf('\n') > -1)
+                .map((currentValue) => {
+                    const firstNewline = currentValue.commit.message.indexOf('\n');
+                    return {
+                        date: new Date(currentValue.commit.author.date),
+                        subject: currentValue.commit.message.substr(0, firstNewline).trim(),
+                        body: currentValue.commit.message.substr(firstNewline).trim()
+                    }
+                })
+                .reverse();
         }
 
-        return (
-            <div>
-                <Header match={match}/>
-                <h1>Hitos</h1>
-                <ul>
-                    {items.map((currentValue, index) => (
-                        <li key={index}>{currentValue.commit.message}</li>
-                    ))}
-                </ul>
-            </div>
-        );
+        return <div>
+            <Header match={match}/>
+            <h1>Hitos</h1>
+            <ol className="list-unstyled insights">
+                {items.map((currentValue, index) => (
+                    <li className="insight" data-is={currentValue.date.toLocaleString('es')} key={index}>
+                        <h2 className="insight__subject">{currentValue.subject}</h2>
+                        <p className="insight__body">{currentValue.body}</p>
+                    </li>
+                ))}
+            </ol>
+        </div>;
     };
 }
 
