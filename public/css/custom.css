@@ -9,6 +9,11 @@ h1 {
     margin-bottom: 2rem;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .btn-primary {
     background-color: #66cccc;
     border-color: #39acac;
