@@ -59,11 +59,11 @@ export function* fetchDocuments(action) {
 
 export function* saveDocument(action) {
     const repo = gh.getRepo('docART', action.prototype);
-    const {prototype, section, path, ...content} = action.values;
+    const {prototype, section, path, insight, ...content} = action.values;
     var message;
 
-    if (action.values.insight) {
-        message = action.values.insight.title + '\n\n' + action.values.insight.other;
+    if (insight) {
+        message = insight.title + '\n\n' + insight.other;
     } else {
         message = 'Update ' + section;
     }
