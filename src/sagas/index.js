@@ -10,7 +10,7 @@ export function* listPrototypes() {
     try {
         const response = yield call([org, org.getRepos]);
         const items = response.data.filter((currentValue) => {
-            return ['app', 'documentacion'].indexOf(currentValue.name) < 0;
+            return ['app', 'documentacion', 'documentacion_plantilla'].indexOf(currentValue.name) < 0;
         });
         const responses = yield all(items.map((currentValue) => {
             let repo = gh.getRepo(currentValue.full_name);
